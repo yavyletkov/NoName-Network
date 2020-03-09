@@ -15,7 +15,7 @@ function App() {
             <Nav />
             <Main />
             <Footer />
-            <span>пизда</span>
+            <span>пиз</span>
         </div>
     );
 }
