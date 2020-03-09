@@ -15,6 +15,7 @@ function App() {
             <Nav />
             <Main />
             <Footer />
+            <span>пизда</span>
         </div>
     );
 }
