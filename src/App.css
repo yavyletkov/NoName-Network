@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+    margin-left: calc(10% - 10px);
+    margin-right: 10%;
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "nav main"
+    "footer footer";
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 70px 1fr 100px;
+    gap: 10px;
+    color: #fff;
+
+}
+
+#header, #nav, #main, #footer {
+    background-color: gray;
+    padding: 10px;
+    text-align: left;
+}
+
+/* ///////////////////////////////////////////// */
+
+#header {
+    grid-area: header;
+}
+
+#nav {
+    grid-area: nav;
+    line-height: 3em;
+    font-size: 15px;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+    "profileHeader profileHeader"
+    "profilePhoto profileInfo"
+    "profilePostsArea profilePostsArea";
+    grid-template-columns: 20% calc(80% - 10px);
+    grid-template-rows: 200px 1fr 1fr;
+    gap: 10px;
+    color: #fff;
+
+}
+
+#footer {
+    grid-area: footer;
+}
+
+/* ///////////////////////////////////////////// */
+#profileHeader, #profilePhoto, #profileInfo, #profilePostsArea {
+    background-color: #000;
+    text-align: left;
+    padding: 10px;
+
+}
+
+#profileHeader {
+    grid-area: profileHeader;
+    /* background: url(/images/public/profileHeader.jpg) #000 no-repeat;
+    background-blend-mode: screen; */
+}
+
+#profilePhoto {
+    grid-area: profilePhoto;
+}
+
+#profileInfo {
+    grid-area: profileInfo;
+}
+
+#profilePostsArea {
+    grid-area: profilePostsArea;
+}
