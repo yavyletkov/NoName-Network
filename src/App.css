@@ -26,7 +26,7 @@ code {
     display: grid;
     grid-template-areas:
     "header header"
-    "nav main"
+    "nav profile"
     "footer footer";
     grid-template-columns: 20% 80%;
     grid-template-rows: 70px 1fr 100px;
@@ -35,7 +35,7 @@ code {
 
 }
 
-#header, #nav, #main, #footer {
+.header, .nav, .profile, .footer {
     background-color: gray;
     padding: 10px;
     text-align: left;
@@ -43,18 +43,18 @@ code {
 
 /* ///////////////////////////////////////////// */
 
-#header {
+.header {
     grid-area: header;
 }
 
-#nav {
+.nav {
     grid-area: nav;
     line-height: 3em;
     font-size: 15px;
 }
 
-.main {
-    grid-area: main;
+.profile {
+    grid-area: profile;
     display: grid;
     grid-template-areas:
     "profileHeader profileHeader"
@@ -67,32 +67,32 @@ code {
 
 }
 
-#footer {
+.footer {
     grid-area: footer;
 }
 
 /* ///////////////////////////////////////////// */
-#profileHeader, #profilePhoto, #profileInfo, #profilePostsArea {
+.profileHeader, .profilePhoto, .profileInfo, .profilePostsArea {
     background-color: #000;
     text-align: left;
     padding: 10px;
 
 }
 
-#profileHeader {
+.profileHeader {
     grid-area: profileHeader;
     /* background: url(/images/public/profileHeader.jpg) #000 no-repeat;
     background-blend-mode: screen; */
 }
 
-#profilePhoto {
+.profilePhoto {
     grid-area: profilePhoto;
 }
 
-#profileInfo {
+.profileInfo {
     grid-area: profileInfo;
 }
 
-#profilePostsArea {
+.profilePostsArea {
     grid-area: profilePostsArea;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Nav = () => {
-    return <nav id="nav">
+    return <nav className="nav">
         <ul>
             <li>ПРОФИЛЬ</li>
             <li>СООБЩЕНИЯ</li>

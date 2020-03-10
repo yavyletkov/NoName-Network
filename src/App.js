@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import Main from "./components/Main";
+import Profile from "./components/Profile";
 import Footer from "./components/Footer";
 
 
@@ -13,7 +13,7 @@ function App() {
         <div className="App">
             <Header />
             <Nav />
-            <Main />
+            <Profile />
             <Footer />
         </div>
     );
