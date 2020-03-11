@@ -1,0 +1,34 @@
+.profile {
+    grid-area: profile;
+
+    display: grid;
+    grid-template-areas:
+    "profileHeader profileHeader"
+    "profilePhoto profileInfo"
+    "profilePostsArea profilePostsArea";
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 120px 150px 1fr;
+    gap: 10px;
+    color: #fff;
+
+    background-color: gray;
+    padding: 10px;
+    text-align: left;
+}
+
+.profileHeader, .profilePhoto, .profileInfo {
+    background-color: #000;
+    text-align: left;
+    padding: 10px;
+
+}
+
+.profileHeader {
+    grid-area: profileHeader;
+}
+.profilePhoto {
+    grid-area: profilePhoto;
+}
+.profileInfo {
+    grid-area: profileInfo;
+}
