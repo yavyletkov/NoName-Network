@@ -1,7 +1,11 @@
 .dialogs {
     grid-area: main;
+
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    gap: 5px;
+
     background-color: gray;
     padding: 10px;
     text-align: left;
-
 }

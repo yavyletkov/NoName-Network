@@ -14,6 +14,10 @@
     color: inherit;
 }
 
+.nav a.active {
+    font-weight: bold;
+}
+
 .menuItem:first-child { margin-top: 0px; }
 .menuItem:last-child { margin-top: 70px; }
 
