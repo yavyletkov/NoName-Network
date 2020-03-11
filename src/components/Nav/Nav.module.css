@@ -1,15 +1,24 @@
-.nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    margin-left: 20px;
-    line-height: 3em;
-    font-size: 15px;
-}
-
 .nav {
     grid-area: nav;
     background-color: gray;
     padding: 10px;
     text-align: left;
+}
+
+.nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav a:visited {
+    color: inherit;
+}
+
+.menuItem:first-child { margin-top: 0px; }
+.menuItem:last-child { margin-top: 70px; }
+
+.menuItem {
+    padding: 10px;
+    border: thin solid black;
+    margin-top: 10px;
 }

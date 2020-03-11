@@ -1,10 +1,10 @@
-.profilePostsArea {
-    grid-area: profilePostsArea;
+.postsArea {
+    grid-area: postsArea;
     background-color: #000;
     text-align: left;
     padding: 10px;
 }
 
-.postsList {
+.list {
     margin-top: 10px;
 }

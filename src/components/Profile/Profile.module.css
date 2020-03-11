@@ -1,11 +1,11 @@
 .profile {
-    grid-area: profile;
+    grid-area: main;
 
     display: grid;
     grid-template-areas:
-    "profileHeader profileHeader"
-    "profilePhoto profileInfo"
-    "profilePostsArea profilePostsArea";
+    "cover cover"
+    "userPhoto userInfo"
+    "postsArea postsArea";
     grid-template-columns: 150px 1fr;
     grid-template-rows: 120px 150px 1fr;
     gap: 10px;
@@ -16,19 +16,19 @@
     text-align: left;
 }
 
-.profileHeader, .profilePhoto, .profileInfo {
+.cover, .userPhoto, .userInfo {
     background-color: #000;
     text-align: left;
     padding: 10px;
 
 }
 
-.profileHeader {
-    grid-area: profileHeader;
+.cover {
+    grid-area: cover;
 }
-.profilePhoto {
-    grid-area: profilePhoto;
+.userPhoto {
+    grid-area: userPhoto;
 }
-.profileInfo {
-    grid-area: profileInfo;
+.userInfo {
+    grid-area: userInfo;
 }

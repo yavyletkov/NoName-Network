@@ -3,18 +3,11 @@ import s from './Nav.module.css';
 
 const Nav = () => {
     return <nav className={s.nav}>
-        <ul>
-            <li>ПРОФИЛЬ</li>
-            <li>СООБЩЕНИЯ</li>
-            <li>НОВОСТИ</li>
-            <li>МУЗЫКА</li>
-            <li>НАСТРОЙКИ</li>
-            <li>ПРОФИЛЬ</li>
-            <li>СООБЩЕНИЯ</li>
-            <li>НОВОСТИ</li>
-            <li>МУЗЫКА</li>
-            <li>НАСТРОЙКИ</li>
-        </ul>
+        <div className={s.menuItem}><a href='/profile'>Профиль</a></div>
+        <div className={s.menuItem}><a href='/dialogs'>Сообщения</a></div>
+        <div className={s.menuItem}><a href='/feed'>Новости</a></div>
+        <div className={s.menuItem}><a href='/music'>Музыка</a></div>
+        <div className={s.menuItem}><a href='/settings'>Настройки</a></div>
     </nav>
 }
 

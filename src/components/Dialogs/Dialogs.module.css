@@ -1,0 +1,7 @@
+.dialogs {
+    grid-area: main;
+    background-color: gray;
+    padding: 10px;
+    text-align: left;
+
+}
