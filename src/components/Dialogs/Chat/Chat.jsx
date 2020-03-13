@@ -1,11 +1,16 @@
 import React from 'react';
 import s from './Chat.module.css';
+import Message from './Message/Message'
 
+const Chat = (props) => {
 
-const Chat = () => {
+    let chatListElements = props.messagesData.map(function(item) {
+        return (<Message key={item.id} id={item.id} text={item.text} />)
+    })
+
     return (
         <div className={s.chat}>
-            <div className={s.message}></div>
+            {chatListElements}
         </div>
     )
 }

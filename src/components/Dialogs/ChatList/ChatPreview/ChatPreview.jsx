@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom';
 
 const ChatPreview = (props) => {
     return (
-        <div className={s.dialogPreview}>
+        <div className={s.chatPreview}>
             <NavLink to={'/dialogs/' + props.id}>{props.name}</NavLink>
         </div>
     )

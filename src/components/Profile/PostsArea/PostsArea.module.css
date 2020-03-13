@@ -7,4 +7,13 @@
 
 .list {
     margin-top: 10px;
+    display: flex;
+    flex-direction: column-reverse;
 }
+
+
+textarea {
+    width: 50%;
+    height: 40px;
+    resize: none;
+   }

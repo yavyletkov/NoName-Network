@@ -1,5 +1,21 @@
 .chatPreview {
-    background-color: black;
+    background-color: green;
     padding: 10px;
-    border: thin solid white;
+    margin-top: 10px;
+}
+
+.chatPreview:hover {
+    background-color: #35BA00;
+}
+
+.chatPreview a {
+    text-decoration: none;
+}
+
+.chatPreview a:visited {
+    color: inherit;
+}
+
+.chatPreview:first-child {
+    margin-top: 0px;
 }

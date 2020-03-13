@@ -1,16 +1,20 @@
 import React from 'react';
 import s from './ChatList.module.css';
 
-import ChatPreview from './ChatPreview/ChatPreview'
+import ChatPreview from './ChatPreview/ChatPreview';
 
-const ChatList = () => {
+const ChatList = (props) => {
+
+    let chatListElements = props.chatListData.map(function(item) {
+        return (<ChatPreview key={item.id} id={item.id} name={item.name} />)
+    });
+
     return (
     <div className={s.chatList}>
         {
         //сюда можно поиск добавить
         }
-        <ChatPreview id='1' name='Дима Дима'/>
-
+        {chatListElements}
     </div>)
 }
 

@@ -4,11 +4,11 @@ import ChatList from './ChatList/ChatList'
 import Chat from './Chat/Chat'
 
 
-const Dialogs = () => {
+const Dialogs = (props) => {
     return (
         <div className={s.dialogs}>
-            <ChatList />
-            <Chat />
+            <ChatList chatListData={props.state.chatListData}/>
+            <Chat messagesData={props.state.messagesData}/>
         </div>
     )
 }

@@ -9,18 +9,17 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from 'react-router-dom';
 
 
-
-
-function App() {
+function App(props) {
+    console.log(props);
     return (
         <BrowserRouter>
             <div className="App">
                 <Header />
-                <Nav />
+                <Nav state={props.state.nav}/>
                 <Footer />
 
-                <Route path='/profile' component={Profile} />
-                <Route path='/dialogs' component={Dialogs} />
+                <Route path='/profile' render={ () => <Profile state={props.state.profile}/> } />
+                <Route path='/dialogs' render={ () => <Dialogs state={props.state.dialogs}/> } />
             </div>
         </BrowserRouter>
     );
