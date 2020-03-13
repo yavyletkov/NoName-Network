@@ -1,5 +1,14 @@
 .navbarFriendList {
+    display: block;
     width: 100%;
     height: 200px;
-    background-color: red;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.container h2 {
+    margin: 8px 0;
 }

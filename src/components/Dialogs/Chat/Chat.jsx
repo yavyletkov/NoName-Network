@@ -4,13 +4,22 @@ import Message from './Message/Message'
 
 const Chat = (props) => {
 
-    let chatListElements = props.messagesData.map(function(item) {
+    let messages = props.messagesData.map(function(item) {
         return (<Message key={item.id} id={item.id} text={item.text} />)
-    })
+    });
+
+    let newMessage = React.createRef();
+
+    let addNewMessage = () => {
+        let text = newMessage.current.value;
+        alert(text);
+    };
 
     return (
         <div className={s.chat}>
-            {chatListElements}
+            {messages}
+            <textarea ref={newMessage} placeholder='Type something' className='textArea'></textarea>
+            <button onClick={ addNewMessage }>Send</button>
         </div>
     )
 }

@@ -28,6 +28,8 @@
 }
 .userPhoto {
     grid-area: userPhoto;
+    border-radius: 75px;
+    text-align: center;
 }
 .userInfo {
     grid-area: userInfo;

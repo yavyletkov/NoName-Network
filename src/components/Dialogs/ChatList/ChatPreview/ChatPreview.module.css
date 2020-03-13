@@ -10,6 +10,7 @@
 
 .chatPreview a {
     text-decoration: none;
+    color: inherit;
 }
 
 .chatPreview a:visited {
