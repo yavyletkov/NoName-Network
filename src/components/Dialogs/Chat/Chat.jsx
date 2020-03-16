@@ -16,10 +16,14 @@ const Chat = (props) => {
     };
 
     return (
-        <div className={s.chat}>
-            {messages}
-            <textarea ref={newMessage} placeholder='Type something' className='textArea'></textarea>
-            <button onClick={ addMessage }>Send</button>
+        <div className={s.container}>
+            <div className={s.chat}>
+                {messages}
+            </div>
+            <div className={s.field}>
+                <textarea ref={newMessage} placeholder='Type something' className='textArea'></textarea>
+                <button onClick={ addMessage }>Send</button>
+            </div>
         </div>
     )
 }

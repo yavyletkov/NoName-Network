@@ -2,6 +2,7 @@
     /* background-color: #e2e2e2; */
     background-color: ##fff;
     border-right: thin solid #B8B8B8;
+    overflow-y: scroll;
 
     padding: 10px;
 }

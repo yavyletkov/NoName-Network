@@ -1,20 +1,25 @@
 .chatPreview {
-    background-color: green;
+    display: block;
+    background-color: #A5FF67;
     padding: 10px;
     margin-top: 10px;
+    color: #404040;
+    text-decoration: none;
+    text-shadow: -1px 1px 0px rgba(255,255,255,0.5);
+    transition: all 200ms;
 }
 
 .chatPreview:hover {
-    background-color: #35BA00;
+    background-color: #E5FFD4;
+    padding-left: 15px;
 }
 
-.chatPreview a {
-    text-decoration: none;
-    color: inherit;
+.chatPreview.active {
+    background-color: #E5FFD4;
 }
 
-.chatPreview a:visited {
-    color: inherit;
+.chatPreview:visited {
+    color: #404040;
 }
 
 .chatPreview:first-child {

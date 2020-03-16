@@ -18,19 +18,19 @@ let state = {
             {id: 4, text: 'Пока, урод'},
         ],
         chatListData: [
-            {id: 1, name: 'Иван', surname: 'Иванов'},
-            {id: 2, name: 'Вася', surname: 'Васин'},
-            {id: 3, name: 'Кирилл', surname: 'Кириллов'},
-            {id: 4, name: 'Дима', surname: 'Димов'},
+            {id: 1, name: 'Нина', surname: 'Иванова'},
+            {id: 2, name: 'Петя', surname: 'Васин'},
+            {id: 3, name: 'Жора', surname: 'Кириллов'},
+            {id: 4, name: 'Вера', surname: 'Димова'},
             {id: 5, name: 'Таня', surname: 'Танина'},
         ],
     },
     nav: {
         friendsData: [
-            {id: 1, name: 'Иван', surname: 'Иванов'},
+            {id: 1, name: 'Нина', surname: 'Иванова'},
             {id: 2, name: 'Вася', surname: 'Васин'},
-            {id: 3, name: 'Кирилл', surname: 'Кириллов'},
-            {id: 4, name: 'Дима', surname: 'Димов'},
+            {id: 3, name: 'Жора', surname: 'Кириллов'},
+            {id: 4, name: 'Вера', surname: 'Димова'},
             {id: 5, name: 'Таня', surname: 'Танина'},
         ]
     }
