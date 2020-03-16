@@ -10,16 +10,16 @@ const Chat = (props) => {
 
     let newMessage = React.createRef();
 
-    let addNewMessage = () => {
+    let addMessage = () => {
         let text = newMessage.current.value;
-        alert(text);
+        props.addMessage(text);
     };
 
     return (
         <div className={s.chat}>
             {messages}
             <textarea ref={newMessage} placeholder='Type something' className='textArea'></textarea>
-            <button onClick={ addNewMessage }>Send</button>
+            <button onClick={ addMessage }>Send</button>
         </div>
     )
 }

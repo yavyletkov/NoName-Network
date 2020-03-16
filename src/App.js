@@ -10,7 +10,6 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 
 function App(props) {
-    console.log(props);
     return (
         <BrowserRouter>
             <div className="App">
@@ -18,8 +17,14 @@ function App(props) {
                 <Nav state={props.state.nav}/>
                 <Footer />
 
-                <Route path='/profile' render={ () => <Profile state={props.state.profile}/> } />
-                <Route path='/dialogs' render={ () => <Dialogs state={props.state.dialogs}/> } />
+                <Route path='/profile' render={ () => <Profile
+                        state={props.state.profile}
+                        addPost={props.addPost}
+                        updateNewPostText={props.updateNewPostText} /> } />
+
+                <Route path='/dialogs' render={ () => <Dialogs
+                        state={props.state.dialogs}
+                        addMessage={props.addMessage}/> } />
             </div>
         </BrowserRouter>
     );

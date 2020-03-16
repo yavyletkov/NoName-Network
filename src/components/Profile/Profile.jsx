@@ -9,7 +9,11 @@ const Profile = (props) => {
          <div className={s.cover}>Баннер профиля</div>
          <div className={s.userPhoto}>Ава</div>
          <div className={s.userInfo}>Информация</div>
-         <PostsArea postsData={props.state.postsData} />
+         <PostsArea
+             postsData={props.state.postsData}
+             addPost={props.addPost}
+             updateNewPostText={props.updateNewPostText}
+             newPostText={props.state.newPostText}/>
     </main>
 }
 

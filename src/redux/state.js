@@ -1,3 +1,4 @@
+let rerenderEntireTree;
 
 let state = {
     profile: {
@@ -7,6 +8,7 @@ let state = {
             {id: 3, text: '#яхороший #красава я сегодня выебал бомжа'},
             {id: 4, text: 'Я хз что я могу вам сказать еще'},
         ],
+        newPostText: '',
     },
     dialogs: {
         messagesData: [
@@ -32,6 +34,28 @@ let state = {
             {id: 5, name: 'Таня', surname: 'Танина'},
         ]
     }
+};
+
+export const addPost = () => {
+    let newPost = {id: 5, text: state.profile.newPostText};
+    state.profile.postsData.push(newPost);
+    state.profile.newPostText = '';
+    rerenderEntireTree(state);
 }
+
+export const updateNewPostText = (text) => {
+    state.profile.newPostText = text;
+    rerenderEntireTree(state);
+}
+
+export const addMessage = (text) => {
+    let newMessage = {id: 5, text: text};
+    state.dialogs.messagesData.push(newMessage);
+    rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer
+} // "импортнули" ререндер их индекс.жс
 
 export default state;

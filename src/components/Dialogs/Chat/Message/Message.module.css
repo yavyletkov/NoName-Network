@@ -1,6 +1,6 @@
 .message {
     background-color: green;
-    padding: 10px;
+    padding: 10px 15px;
     margin: 3px;
-    border-radius: 4px;
+    border-radius: 20px;
 }

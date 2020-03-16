@@ -4,7 +4,7 @@
     margin: 0 auto;
     width: 33.3%;
     min-width: 40px;
-    background-color: gray;
+    /* background-color: gray; */
     margin-bottom: 5px;
     /* background-color: red; */
 }
@@ -21,6 +21,7 @@
 }
 
 .name {
+    font-size: 12px;
     position: relative;
     left: 0;
     text-align: center;

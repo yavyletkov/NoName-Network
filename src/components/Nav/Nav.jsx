@@ -18,12 +18,12 @@ const Nav = (props) => {
             <NavLink to='/feed' activeClassName={s.active}>Новости</NavLink>
         </div>
 
-        <div className={s.menuItem} activeClassName={s.active}>
-            <NavLink to='/music'>Музыка</NavLink>
+        <div className={s.menuItem}>
+            <NavLink to='/music' activeClassName={s.active}>Музыка</NavLink>
         </div>
 
         <div className={s.menuItem}>
-            <NavLink to='/settings'>Настройки</NavLink>
+            <NavLink to='/settings' activeClassName={s.active}>Настройки</NavLink>
         </div>
 
         <NavbarFriendList friendsData={props.state.friendsData}/>

@@ -8,7 +8,8 @@ const Dialogs = (props) => {
     return (
         <div className={s.dialogs}>
             <ChatList chatListData={props.state.chatListData}/>
-            <Chat messagesData={props.state.messagesData}/>
+            <Chat messagesData={props.state.messagesData}
+                addMessage={props.addMessage}/>
         </div>
     )
 }
