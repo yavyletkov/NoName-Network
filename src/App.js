@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import store from './redux/state';
 
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
@@ -14,17 +15,17 @@ function App(props) {
         <BrowserRouter>
             <div className="App">
                 <Header />
-                <Nav state={props.state.nav}/>
+                <Nav state={props.store._state.nav}/>
                 <Footer />
 
                 <Route path='/profile' render={ () => <Profile
-                        state={props.state.profile}
-                        addPost={props.addPost}
-                        updateNewPostText={props.updateNewPostText} /> } />
+                        state={props.store.getState().profile}
+                        addPost={props.store.addPost.bind(store)}
+                        updateNewPostText={props.store.updateNewPostText.bind(store)} /> } />
 
                 <Route path='/dialogs' render={ () => <Dialogs
-                        state={props.state.dialogs}
-                        addMessage={props.addMessage}/> } />
+                        state={props.store.getState().dialogs}
+                        addMessage={props.store.addMessage.bind(store)}/> } />
             </div>
         </BrowserRouter>
     );

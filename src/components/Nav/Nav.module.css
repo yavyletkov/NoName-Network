@@ -1,12 +1,9 @@
 .nav {
     grid-area: nav;
-    background-color: #fff;
-    padding: 10px;
-
     text-align: left;
     color: #404040;
     font-size: 13px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.13);
+
 }
 
 .nav a {
@@ -23,10 +20,14 @@
     padding-left: 10px;
 }
 
-.menuItem:first-child { margin-top: 0px; }
+.menu {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    padding: 5px 0;
+}
 
 .menuItem {
-    padding: 10px;
+    padding: 10px 20px;
     /* border: thin solid black; */
     margin-top: 10px;
     margin-bottom: 10px;

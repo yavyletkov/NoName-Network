@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f2f3;
+  background-color: #EEEEEE;
 }
 
 html {
@@ -19,14 +19,13 @@ code {
 
 .App {
     display: grid;
-
+    margin-top: 60px;
     grid-template-areas:
-    "header header"
     "nav main"
     "footer footer";
     grid-template-columns: 20% 80%;
-    grid-template-rows: 40px 1fr 40px;
-    grid-column-gap: 20px;
+    grid-template-rows: 1fr 40px;
+    grid-column-gap: 30px;
     grid-row-gap: 20px;
 
     margin-left: calc(10% - 10px);

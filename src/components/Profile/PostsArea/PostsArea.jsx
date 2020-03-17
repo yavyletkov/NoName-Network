@@ -18,25 +18,21 @@ const PostsArea = (props) => {
 
     return <div className={s.postsArea}>
 
-        <div>
-            <textarea
-                ref={newPostElement}
-                className='textArea'
-                value={props.newPostText}
-                onChange={onPostChange}
-                placeholder='Tell something'>
-            </textarea>
-            <br></br>
-            <button
-                onClick={ props.addPost }>
-                Post!
-            </button>
-        </div>
+        <textarea
+            ref={newPostElement}
+            className='textArea'
+            value={props.newPostText}
+            onChange={onPostChange}
+            placeholder='Tell something'>
+        </textarea>
+        <br></br>
+        <button
+            onClick={ props.addPost }>
+            Post!
+        </button>
 
         <div className={s.list}>
-            {
-                posts
-            }
+            { posts }
         </div>
     </div>
 }
