@@ -19,13 +19,12 @@ function App(props) {
                 <Footer />
 
                 <Route path='/profile' render={ () => <Profile
-                        state={props.store.getState().profile}
-                        addPost={props.store.addPost.bind(store)}
-                        updateNewPostText={props.store.updateNewPostText.bind(store)} /> } />
+                        profileState={props.store.getState().profile}
+                        dispatch={props.store.dispatch.bind(store)} /> } />
 
                 <Route path='/dialogs' render={ () => <Dialogs
-                        state={props.store.getState().dialogs}
-                        addMessage={props.store.addMessage.bind(store)}/> } />
+                        dialogsState={props.store.getState().dialogs}
+                        dispatch={props.store.dispatch.bind(store)} /> } />
             </div>
         </BrowserRouter>
     );

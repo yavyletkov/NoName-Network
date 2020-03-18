@@ -25,4 +25,7 @@
 
 .postsArea button {
     margin-top: 5px;
+    padding: 6px 20px;
+    background-color: #404040;
+    color: #fff;
 }

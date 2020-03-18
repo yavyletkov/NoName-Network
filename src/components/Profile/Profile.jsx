@@ -10,8 +10,10 @@ const Profile = (props) => {
         <div className={s.userPhoto}>
             <img src='https://www.nelson-chambers.co.uk/front/images/default-user.jpg' alt='User Photo'></img>
         </div>
-        <div className={s.userInfo}>Информация</div>
-        <PostsArea postsData={props.state.postsData} addPost={props.addPost} updateNewPostText={props.updateNewPostText} newPostText={props.state.newPostText}/>
+        <div className={s.userInfo}>User info</div>
+        <PostsArea postsData={props.profileState.postsData}
+            newPostText={props.profileState.newPostText}
+            dispatch={props.dispatch} />
     </main>
 }
 

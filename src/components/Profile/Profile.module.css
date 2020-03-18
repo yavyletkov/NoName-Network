@@ -9,7 +9,7 @@
     grid-template-columns: 150px 1fr;
     grid-template-rows: 120px 150px 1fr;
     grid-column-gap: 30px;
-    grid-row-gap: 20px;
+    grid-row-gap: 10px;
     color: #fff;
 
     /* background-color: #fff;

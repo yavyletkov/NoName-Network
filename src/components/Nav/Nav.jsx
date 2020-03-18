@@ -8,26 +8,26 @@ const Nav = (props) => {
 
         <div className={s.menu}>
             <div className={s.menuItem}>
-                <NavLink to='/profile' activeClassName={s.active}>Профиль</NavLink>
+                <NavLink to='/profile' activeClassName={s.active}>Profile</NavLink>
             </div>
 
             <div className={s.menuItem}>
-                <NavLink to='/dialogs' activeClassName={s.active}>Сообщения</NavLink>
+                <NavLink to='/dialogs' activeClassName={s.active}>Dialogs</NavLink>
             </div>
 
             <div className={s.menuItem}>
-                <NavLink to='/feed' activeClassName={s.active}>Новости</NavLink>
+                <NavLink to='/feed' activeClassName={s.active}>Feed</NavLink>
             </div>
 
             <div className={s.menuItem}>
-                <NavLink to='/music' activeClassName={s.active}>Музыка</NavLink>
+                <NavLink to='/music' activeClassName={s.active}>Music</NavLink>
             </div>
 
             <div className={s.menuItem}>
-                <NavLink to='/settings' activeClassName={s.active}>Настройки</NavLink>
+                <NavLink to='/settings' activeClassName={s.active}>Settings</NavLink>
             </div>
         </div>
-        
+
         <NavbarFriendList friendsData={props.state.friendsData}/>
 
     </nav>
