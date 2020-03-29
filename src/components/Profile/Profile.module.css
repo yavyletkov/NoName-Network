@@ -20,7 +20,7 @@
 
 .userInfo {
     text-align: left;
-    padding: 10px;
+    padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
     color: #404040;
@@ -28,7 +28,7 @@
 
 .cover {
     grid-area: cover;
-    /* background-color: #A5FF67; */
+    /* background-color: #C4FF9C; */
     text-align: left;
     background-color: #fff;
     overflow: hidden;

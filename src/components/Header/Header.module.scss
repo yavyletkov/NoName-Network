@@ -1,3 +1,5 @@
+$gray: #404040;
+
 .header {
     display: flex;
     position: absolute;
@@ -7,7 +9,7 @@
     grid-area: header;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    color: #404040;
+    color: $gray;
     padding: 7px;
     padding-left: calc(10% + 15px);
     text-align: left;
@@ -17,6 +19,12 @@
 .logo {
     font-family: 'Gochi Hand', cursive;
     font-size: 25px;
+    transition: all 200ms,
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    cursor: default;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap');

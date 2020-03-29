@@ -10,9 +10,13 @@ const Chat = (props) => {
 
     let newMessage = React.createRef();
 
-    let addMessage = () => {
-        let text = newMessage.current.value;
-        props.dispatch({type: 'ADD-MESSAGE', text: text});
+    let onMessageChange = () => {
+        let symbol = newMessage.current.value;
+        props.updateNewMessageText(symbol);
+    }
+
+    let onClick = () => {
+        props.sendMessage();
     };
 
     return (
@@ -21,8 +25,14 @@ const Chat = (props) => {
                 {messages}
             </div>
             <div className={s.field}>
-                <textarea ref={ newMessage } placeholder='Type something' className='textArea'></textarea>
-                <button onClick={ addMessage }>Send</button>
+                <textarea
+                    ref={ newMessage }
+                    className='textArea'
+                    value={props.newMessageText}
+                    placeholder='Type something'
+                    onChange={onMessageChange}>
+                </textarea>
+                <button onClick={ onClick }>Send</button>
             </div>
         </div>
     )

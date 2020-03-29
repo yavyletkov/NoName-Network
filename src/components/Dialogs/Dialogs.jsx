@@ -1,14 +1,15 @@
 import React from 'react';
 import s from './Dialogs.module.css';
 import ChatList from './ChatList/ChatList'
-import Chat from './Chat/Chat'
+import ChatContainer from './Chat/ChatContainer'
 
 
 const Dialogs = (props) => {
     return (
         <div className={s.dialogs}>
             <ChatList chatListData={props.dialogsState.chatListData}/>
-            <Chat messagesData={props.dialogsState.messagesData}
+            <ChatContainer
+                state={props.dialogsState}
                 dispatch={props.dispatch} />
         </div>
     )

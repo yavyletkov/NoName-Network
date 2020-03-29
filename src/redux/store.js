@@ -1,3 +1,8 @@
+import profileReducer from './profileReducer';
+import dialogsReducer from './dialogsReducer';
+import navReducer from './navReducer';
+
+
 let store = {
 
     _state: {
@@ -17,6 +22,7 @@ let store = {
                 {id: 3, text: 'Ой всё'},
                 {id: 4, text: 'Пока, урод'},
             ],
+            newMessageText: 'хуй',
             chatListData: [
                 {id: 1, name: 'Нина', surname: 'Иванова'},
                 {id: 2, name: 'Петя', surname: 'Васин'},
@@ -36,28 +42,17 @@ let store = {
         }
     },
     _callSubscriber() { },
-    
+
     getState() {return this._state},
     subscribe(observer) {
         this._callSubscriber = observer;
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
-            let newPost = {id: 5, text: this._state.profile.newPostText};
-            this._state.profile.postsData.push(newPost);
-            this._state.profile.newPostText = '';
-            this._callSubscriber(this);
-        }
-        else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profile.newPostText = action.text;
-            this._callSubscriber(this);
-        }
-        else if (action.type === 'ADD-MESSAGE') {
-            let newMessage = {id: 5, text: action.text};
-            this._state.dialogs.messagesData.push(newMessage);
-            this._callSubscriber(this);
-        }
+        this._state.profile = profileReducer(this._state.profile, action);
+        this._state.dialogs = dialogsReducer(this._state.dialogs, action);
+        this._state.nav = navReducer(this._state.nav, action);
+        this._callSubscriber(store);
     }
 
 };

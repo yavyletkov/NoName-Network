@@ -4,7 +4,6 @@ import Post from './Post/Post';
 
 const PostsArea = (props) => {
 
-
     let posts = props.postsData.map(function(item) {
         return (<Post key={item.id} id={item.id} text={item.text} />)
     });
@@ -13,11 +12,11 @@ const PostsArea = (props) => {
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch({type:'UPDATE-NEW-POST-TEXT', text: text});
+        props.updateNewPostText(text);
     }
 
     let onClick = () => {
-        props.dispatch({type: 'ADD-POST'});
+        props.addPost();
     }
 
     return <div className={s.postsArea}>

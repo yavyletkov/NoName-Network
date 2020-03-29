@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import store from './redux/state';
+import store from './redux/store';
 
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
@@ -15,7 +15,7 @@ function App(props) {
         <BrowserRouter>
             <div className="App">
                 <Header />
-                <Nav state={props.store._state.nav}/>
+                <Nav state={props.store.getState().nav}/>
                 <Footer />
 
                 <Route path='/profile' render={ () => <Profile
