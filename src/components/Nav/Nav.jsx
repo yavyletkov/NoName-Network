@@ -7,25 +7,26 @@ const Nav = (props) => {
     return <nav className={s.nav}>
 
         <div className={s.menu}>
-            <div className={s.menuItem}>
-                <NavLink to='/profile' activeClassName={s.active}>Profile</NavLink>
-            </div>
 
-            <div className={s.menuItem}>
-                <NavLink to='/dialogs' activeClassName={s.active}>Dialogs</NavLink>
-            </div>
+            <NavLink className={s.menuItem} to='/profile' activeClassName={s.active}>
+                Profile
+            </NavLink>
 
-            <div className={s.menuItem}>
-                <NavLink to='/feed' activeClassName={s.active}>Feed</NavLink>
-            </div>
+            <NavLink className={s.menuItem} to='/dialogs' activeClassName={s.active}>
+                Dialogs
+            </NavLink>
 
-            <div className={s.menuItem}>
-                <NavLink to='/music' activeClassName={s.active}>Music</NavLink>
-            </div>
+            <NavLink className={s.menuItem} to='/feed' activeClassName={s.active}>
+                Feed
+            </NavLink>
 
-            <div className={s.menuItem}>
-                <NavLink to='/settings' activeClassName={s.active}>Settings</NavLink>
-            </div>
+            <NavLink className={s.menuItem} to='/music' activeClassName={s.active}>
+                Music
+            </NavLink>
+
+            <NavLink className={s.menuItem} to='/settings' activeClassName={s.active}>
+                Settings
+            </NavLink>
         </div>
 
         <NavbarFriendList friendsData={props.state.friendsData}/>
