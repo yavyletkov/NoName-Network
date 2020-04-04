@@ -20,6 +20,10 @@ const Nav = (props) => {
                 Feed
             </NavLink>
 
+            <NavLink className={s.menuItem} to='/users' activeClassName={s.active}>
+                Users
+            </NavLink>
+
             <NavLink className={s.menuItem} to='/music' activeClassName={s.active}>
                 Music
             </NavLink>

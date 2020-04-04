@@ -1,21 +1,25 @@
-import React from 'react';
 import Chat from './Chat';
+import {connect} from "react-redux";
 
-const ChatContainer = (props) => {
-
-    let updateNewMessageText = (symbol) => {
-        props.dispatch({type:'UPDATE-NEW-MESSAGE-TEXT', text: symbol});
+let mapStateToProps = (state) => {
+    return {
+        messagesData: state.dialogs.messagesData,
+        newMessageText: state.dialogs.newMessageText,
     }
-
-    let sendMessage = () => {
-        props.dispatch({type: 'SEND-MESSAGE'});
-    }
-
-    return <Chat
-        messagesData={props.state.messagesData}
-        sendMessage={sendMessage}
-        updateNewMessageText={updateNewMessageText}
-        newMessageText={props.state.newMessageText} />
 }
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        updateNewMessageText: (symbol) => {
+            dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', text: symbol});
+        },
+        sendMessage: () => {
+            dispatch({type: 'SEND-MESSAGE'});
+        }
+    }
+}
+
+const ChatContainer = connect(mapStateToProps, mapDispatchToProps)(Chat);
+
 
 export default ChatContainer;

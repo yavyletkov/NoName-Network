@@ -1,21 +1,24 @@
-import React from 'react';
 import PostsArea from './PostsArea';
+import {connect} from "react-redux";
 
-const PostsAreaContainer = (props) => {
-
-    let updateNewPostText = (text) => {
-        props.dispatch({type:'UPDATE-NEW-POST-TEXT', text: text});
+let mapStateToProps = (state) => {
+    return {
+        postsData: state.profile.postsData,
+        newPostText: state.profile.newPostText,
     }
-
-    let addPost = () => {
-        props.dispatch({type: 'ADD-POST'});
-    }
-
-    return <PostsArea
-        updateNewPostText={updateNewPostText}
-        addPost={addPost}
-        postsData={props.state.postsData}
-        newPostText={props.state.newPostText}/>
 }
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        updateNewPostText: (text) => {
+            dispatch({type:'UPDATE-NEW-POST-TEXT', text: text});
+        },
+        addPost: () => {
+            dispatch({type: 'ADD-POST'});
+        }
+    }
+}
+
+const PostsAreaContainer = connect(mapStateToProps, mapDispatchToProps)(PostsArea)
 
 export default PostsAreaContainer;
