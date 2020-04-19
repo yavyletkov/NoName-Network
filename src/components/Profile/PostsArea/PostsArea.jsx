@@ -8,6 +8,7 @@ const PostsArea = (props) => {
         return (<Post key={item.id} id={item.id} text={item.text} />)
     });
 
+
     let newPostElement = React.createRef();
 
     let onPostChange = () => {

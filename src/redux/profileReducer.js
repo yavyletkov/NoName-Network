@@ -6,6 +6,7 @@ let defaultState = {
         {id: 4, text: 'Я в своём познании настолько преисполнился, что как будто бы уже 100 триллионов миллиардов лет проживаю на триллионах и триллионах таких же планет, понимаешь?'},
     ],
     newPostText: '',
+    isFetching: true,
 };
 
 let profileReducer = (state = defaultState, action) => {
@@ -33,10 +34,21 @@ let profileReducer = (state = defaultState, action) => {
             }
             return stateCopy;
         }
+        case 'TOGGLE-IS-FETCHING': {
+            return {...state, isFetching: action.status}
+        }
+        case 'SET-USER-INFO': {
+            return {...state, userInfo: action.userInfo}
+        }
         default: {
             return state;
         }
     }
 }
+
+export let setUserInfo = (userInfo) => {return {type: 'SET-USER-INFO', userInfo: userInfo}};
+export let addPost = () => {return {type: 'ADD-POST'}};
+export let updateNewPostText = (text) => {return {type: 'UPDATE-NEW-POST-TEXT', text: text}};
+
 
 export default profileReducer;

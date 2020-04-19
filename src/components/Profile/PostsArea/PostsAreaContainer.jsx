@@ -1,5 +1,6 @@
 import PostsArea from './PostsArea';
 import {connect} from "react-redux";
+import {addPost, updateNewPostText} from "../../../redux/profileReducer"
 
 let mapStateToProps = (state) => {
     return {
@@ -11,10 +12,10 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
     return {
         updateNewPostText: (text) => {
-            dispatch({type:'UPDATE-NEW-POST-TEXT', text: text});
+            dispatch(updateNewPostText(text));
         },
         addPost: () => {
-            dispatch({type: 'ADD-POST'});
+            dispatch(addPost());
         }
     }
 }

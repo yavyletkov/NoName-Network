@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import Header from "./components/Header/Header";
-import Nav from "./components/Nav/Nav";
-import Profile from "./components/Profile/Profile";
+import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
 import Dialogs from "./components/Dialogs/Dialogs";
-import Users from "./components/Users/Users";
+import UsersContainer from "./components/Users/UsersContainer";
 import {BrowserRouter, Route} from 'react-router-dom';
 import {Provider} from "react-redux";
 import store from "./redux/reduxStore";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 
 function App() {
@@ -17,16 +17,16 @@ function App() {
             <BrowserRouter>
                 <div className="App">
                     <Header/>
-                    <Nav state={store.getState().nav}/>
+                    <Sidebar state={store.getState().sidebar}/>
 
                     <Route path='/profile'
-                           render={() => <Profile />}/>
+                           render={() => <ProfileContainer />}/>
 
                     <Route path='/dialogs'
                            render={() => <Dialogs chatListData={store.getState().dialogs.chatListData}/>}/>
 
                     <Route path='/users'
-                           render={() => <Users/>}/>
+                           render={() => <UsersContainer/>}/>
 
                     <Footer/>
                 </div>

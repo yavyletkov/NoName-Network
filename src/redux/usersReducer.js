@@ -1,37 +1,32 @@
+
 let defaultState = {
-    postsData: [
-        {id: 1, text: 'Первый пост'},
-        {id: 2, text: 'Я тебе скажу, безделье - это игрушка дьявола, это во-первых. Во-вторых, занимайтесь спортом, не надо там по углам курить, шабить, дрочить, мастурбировать, что конечно многие одно и то же, есть жи, просто безделье - это игрушка дьявола, я повторяюсь ежи ну весь мир будет против меня я прав ежи я вдохновляюсь этим ежи а так пацаны голову не теряйте во первых и всех благ вам?'},
-        {id: 3, text: '#красава я насрал на стол'},
-        {id: 4, text: 'Я в своём познании настолько преисполнился, что как будто бы уже 100 триллионов миллиардов лет проживаю на триллионах и триллионах таких же планет, понимаешь?'},
-    ],
-    newPostText: '',
+    usersData: [],
+    pageSize: 20,
+    totalUsersCount: 0,
+    currentPage: 1,
+    isFetching: true,
 };
 
-let profileReducer = (state = defaultState, action) => {
+let usersReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case 'ADD-POST': {
-            if (state.newPostText) {
-                let stateCopy = {
-                    ...state,
-                    postsData: [
-                        ...state.postsData,
-                        {
-                            id: state.postsData[state.postsData.length-1].id + 1,
-                            text: state.newPostText
-                        }
-                        ],
-                        newPostText: '',
-                };
-                return stateCopy;
-            } else return state;
-        }
-        case 'UPDATE-NEW-POST-TEXT': {
+        case 'FOLLOW-USER': {
             let stateCopy = {
                 ...state,
-                newPostText: action.text,
-            }
-            return stateCopy;
+                usersData: state.usersData.map(user => {
+                    if (user.id === action.id) return {...user, followStatus: !user.followStatus}
+                    else return user
+                })
+            };
+            return stateCopy
+        }
+        case 'SET-USERS': {
+            return {...state, usersData: action.usersData, totalUsersCount: action.totalUsersCount}
+        }
+        case 'SET-PAGE': {
+            return {...state, currentPage: action.page}
+        }
+        case 'TOGGLE-IS-FETCHING': {
+            return {...state, isFetching: action.status}
         }
         default: {
             return state;
@@ -39,4 +34,9 @@ let profileReducer = (state = defaultState, action) => {
     }
 }
 
-export default profileReducer;
+export let followUser = (id) => {return {type: 'FOLLOW-USER', id: id}};
+export let setUsers = (users, count) => {return {type: 'SET-USERS', usersData: users, totalUsersCount: count}};
+export let setPage = (number) => {return {type: 'SET-PAGE', page: number}};
+export let toggleIsFetching = (status) => {return {type: 'TOGGLE-IS-FETCHING', status: status}};
+
+export default usersReducer;

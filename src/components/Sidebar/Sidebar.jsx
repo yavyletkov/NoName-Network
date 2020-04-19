@@ -1,10 +1,10 @@
 import React from 'react';
-import s from './Nav.module.css';
+import s from './Sidebar.module.css';
 import NavbarFriendList from './NavbarFriendList/NavbarFriendList'
 import {NavLink} from 'react-router-dom';
 
-const Nav = (props) => {
-    return <nav className={s.nav}>
+const Sidebar = (props) => {
+    return <nav className={s.sidebar}>
 
         <div className={s.menu}>
 
@@ -38,4 +38,4 @@ const Nav = (props) => {
     </nav>
 }
 
-export default Nav;
+export default Sidebar;

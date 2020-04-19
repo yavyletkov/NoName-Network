@@ -1,0 +1,65 @@
+.profileInfo {
+    display: grid;
+    grid-template-areas:
+            "cover cover"
+            "userPhoto userInfo";
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 120px 150px;
+    grid-column-gap: 30px;
+    grid-row-gap: 10px;
+    color: #fff;
+
+    /* background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05); */
+    /* padding: 10px; */
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.userInfo {
+    text-align: left;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    color: #404040;
+}
+
+.cover {
+    grid-area: cover;
+    /* background-color: #C4FF9C; */
+    text-align: left;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.cover img {
+    width: 100%;
+}
+
+.userPhoto {
+    grid-area: userPhoto;
+    text-align: center;
+    /* transform: scale(0.9); */
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border-radius: 75px;
+}
+
+.userPhoto img {
+    width: 150px;
+    height: 150px;
+
+}
+
+.userInfo {
+    grid-area: userInfo;
+}
+
+.fullName {
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: thin solid #B8B8B8;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}

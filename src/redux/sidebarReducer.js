@@ -8,11 +8,11 @@ let defaultState = {
     ],
 };
 
-let navReducer = (state = defaultState, action) => {
+let SidebarReducer = (state = defaultState, action) => {
     switch (action.type) {
         default:
             return state;
     }
 }
 
-export default navReducer;
+export default SidebarReducer;

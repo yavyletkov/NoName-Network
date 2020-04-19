@@ -1,13 +1,15 @@
 import {createStore, combineReducers} from 'redux';
 import profileReducer from './profileReducer';
 import dialogsReducer from './dialogsReducer';
-import navReducer from './navReducer';
+import sidebarReducer from './sidebarReducer';
+import usersReducer from "./usersReducer";
 
 
 let reducers = combineReducers({
     profile: profileReducer,
     dialogs: dialogsReducer,
-    nav: navReducer,
+    sidebar: sidebarReducer,
+    users: usersReducer,
 });
 
 let store = createStore(reducers);
