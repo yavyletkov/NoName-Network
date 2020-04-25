@@ -18,6 +18,8 @@ const Users = (props) => {
             })}
         </div>
 
+        {console.log('BBBBBBB', props)}
+
         {props.usersData.map(item => {
             return <div key={item.id} className={s.userCard}>
 
@@ -33,9 +35,15 @@ const Users = (props) => {
 
 
                 <div className={s.id}> id: {item.id} </div>
-                <button className={s.followBtn} onClick={() => props.followUser(item.id)}>
-                    {item.followStatus ? 'unfollow' : 'follow'}
-                </button>
+
+                { item.followed ?
+                    <button disabled={props.followingIsInProgress} className={s.followBtn} onClick={() => props.onUnFollowClick(item.id)}>
+                        unfollow
+                    </button> :
+                    <button disabled={props.followingIsInProgress} className={s.followBtn} onClick={() => props.onFollowClick(item.id)}>
+                        follow
+                    </button>
+                }
             </div>
         })}
 

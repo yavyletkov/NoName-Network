@@ -6,7 +6,7 @@ let defaultState = {
         {id: 4, text: 'Я в своём познании настолько преисполнился, что как будто бы уже 100 триллионов миллиардов лет проживаю на триллионах и триллионах таких же планет, понимаешь?'},
     ],
     newPostText: '',
-    isFetching: true,
+    isFetching: false,
 };
 
 let profileReducer = (state = defaultState, action) => {

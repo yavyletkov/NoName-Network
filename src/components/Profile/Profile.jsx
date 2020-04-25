@@ -5,7 +5,6 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = (props) => {
     return <main className={s.profile}>
-        {console.log('пропсы profile', props)}
         <ProfileInfo {...props} />
         <PostsAreaContainer />
     </main>

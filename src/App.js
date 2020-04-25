@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Header from "./components/Header/Header";
+import HeaderContainer from "./components/Header/HeaderContainer";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
 import Dialogs from "./components/Dialogs/Dialogs";
@@ -16,10 +16,10 @@ function App() {
         <Provider store={store}>
             <BrowserRouter>
                 <div className="App">
-                    <Header/>
+                    <HeaderContainer />
                     <Sidebar state={store.getState().sidebar}/>
 
-                    <Route path='/profile'
+                    <Route path='/profile/:userID?'
                            render={() => <ProfileContainer />}/>
 
                     <Route path='/dialogs'
