@@ -1,25 +1,16 @@
 import Chat from './Chat';
 import {connect} from "react-redux";
+import {withAuthRedirect} from "../../../hoc/withAuthRedirect";
+import {compose} from "redux";
+import {sendMessage} from "../../../redux/dialogsReducer";
 
 let mapStateToProps = (state) => {
     return {
         messagesData: state.dialogs.messagesData,
-        newMessageText: state.dialogs.newMessageText,
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        updateNewMessageText: (symbol) => {
-            dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', text: symbol});
-        },
-        sendMessage: () => {
-            dispatch({type: 'SEND-MESSAGE'});
-        }
-    }
-}
-
-const ChatContainer = connect(mapStateToProps, mapDispatchToProps)(Chat);
-
-
-export default ChatContainer;
+export default compose(
+    connect(mapStateToProps, {sendMessage}),
+    withAuthRedirect
+)(Chat);

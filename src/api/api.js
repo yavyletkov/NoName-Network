@@ -29,3 +29,34 @@ export const UsersAPI = {
     },
 };
 
+export const ProfileAPI = {
+    getProfile (id) {
+        return instance.get(`/profile/${id}`)
+            .then(response => {
+                return response.data
+            })
+    },
+    getUserStatus (id) {
+        return instance.get(`/profile/status/${id}`)
+            .then(response => {
+                return response.data
+            })
+    },
+    updateUserStatus (status) {
+        return instance.put(`/profile/status`, {status: status})
+            .then(response => {
+                return response.data
+            })
+    },
+
+};
+
+export const AuthAPI = {
+    me () {
+        return instance.get(`/auth/me`)
+            .then(response => {
+                return response.data
+            })
+    }
+}
+

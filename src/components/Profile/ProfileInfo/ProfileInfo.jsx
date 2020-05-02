@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
+import Status from "../Status/Status";
 
 const ProfileInfo = (props) => {
     if(props.userInfo) {
@@ -13,9 +14,9 @@ const ProfileInfo = (props) => {
 
             </div>
             <div className={s.userInfo}>
-                <div className={s.status}>
-                    { props.userInfo.status ? `status: ${props.userInfo.status}` : null}
-                </div>
+                    { console.log(props.userInfo) }
+                    { console.log('govnooooo', props) }
+                    <Status yourID={props.yourID} id={props.id} userStatus={props.userStatus} getUserStatus={props.getUserStatus} updateUserStatus={props.updateUserStatus} />
                 <div className={s.fullName}>{props.userInfo.fullName}</div>
             </div>
 

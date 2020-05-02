@@ -1,8 +1,7 @@
 .chatList {
     /* background-color: #e2e2e2; */
-    background-color: ##fff;
-    border-right: thin solid #B8B8B8;
+    background-color: #fff;
     overflow-y: scroll;
-
+    border: 1px solid #dfdfdf;
     padding: 10px;
 }

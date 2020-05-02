@@ -1,0 +1,27 @@
+.textInput {
+    display: inline;
+    width: 80%;
+    border-radius: 4px;
+    padding: 5px;
+    height: 30px;
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 5px;
+    border: thin solid #B8B8B8;
+    resize: none;
+}
+
+.button {
+    display: inline;
+    width: 16%;
+    margin-top: 5px;
+    padding: 6px 20px;
+    background-color: #404040;
+    color: #fff;
+    margin-left: 3%;
+}
+
+.chatForm {
+    margin-top: 0;
+    padding: 10px;
+}

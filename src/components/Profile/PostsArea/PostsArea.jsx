@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './PostsArea.module.css';
 import Post from './Post/Post';
+import PostForm from "./PostForm/PostForm";
 
 const PostsArea = (props) => {
 
@@ -8,32 +9,15 @@ const PostsArea = (props) => {
         return (<Post key={item.id} id={item.id} text={item.text} />)
     });
 
-
-    let newPostElement = React.createRef();
-
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
-    }
-
-    let onClick = () => {
-        props.addPost();
+    const onSubmit = (formData) => {
+        console.log(formData)
+        props.addPost(formData.postText);
+        formData.postText = ''
     }
 
     return <div className={s.postsArea}>
 
-        <textarea
-            ref={newPostElement}
-            className='textArea'
-            value={props.newPostText}
-            onChange={onPostChange}
-            placeholder='Tell something'>
-        </textarea>
-        <br></br>
-        <button
-            onClick={onClick}>
-            Post!
-        </button>
+        <PostForm onSubmit={onSubmit}/>
 
         <div className={s.list}>
             { posts }

@@ -1,3 +1,5 @@
+import {ProfileAPI} from "../api/api";
+
 let defaultState = {
     postsData: [
         {id: 1, text: 'Первый пост'},
@@ -5,34 +7,27 @@ let defaultState = {
         {id: 3, text: '#красава я насрал на стол'},
         {id: 4, text: 'Я в своём познании настолько преисполнился, что как будто бы уже 100 триллионов миллиардов лет проживаю на триллионах и триллионах таких же планет, понимаешь?'},
     ],
-    newPostText: '',
     isFetching: false,
+    userID: '',
+    userStatus: '',
 };
 
 let profileReducer = (state = defaultState, action) => {
     switch (action.type) {
         case 'ADD-POST': {
-            if (state.newPostText) {
+            if (action.postText) {
                 let stateCopy = {
                     ...state,
                     postsData: [
                         ...state.postsData,
                         {
                             id: state.postsData[state.postsData.length-1].id + 1,
-                            text: state.newPostText
+                            text: action.postText
                         }
                         ],
-                        newPostText: '',
                 };
                 return stateCopy;
             } else return state;
-        }
-        case 'UPDATE-NEW-POST-TEXT': {
-            let stateCopy = {
-                ...state,
-                newPostText: action.text,
-            }
-            return stateCopy;
         }
         case 'TOGGLE-IS-FETCHING': {
             return {...state, isFetching: action.status}
@@ -40,15 +35,53 @@ let profileReducer = (state = defaultState, action) => {
         case 'SET-USER-INFO': {
             return {...state, userInfo: action.userInfo}
         }
+        case 'SET-USER-ID': {
+            return {...state, userID: action.userID}
+        }
+        case 'SET-USER-STATUS': {
+            return {...state, userStatus: action.userStatus}
+        }
         default: {
             return state;
         }
     }
 }
 
+export const getProfile = (id) => (dispatch) => {
+    if (!id) id = 7340;
+    dispatch(setUserID(id));
+    dispatch(toggleIsFetching(true));
+
+    ProfileAPI.getProfile(id)
+        .then(response => {
+            dispatch(setUserInfo(response));
+            dispatch(toggleIsFetching(false));
+
+        })
+}
+
+export const getUserStatus = (id) => (dispatch) => {
+    ProfileAPI.getUserStatus(id)
+        .then(response => {
+
+            dispatch(setUserStatus(response))
+        })
+}
+
+export const updateUserStatus = (userStatus) => (dispatch) => {
+    ProfileAPI.updateUserStatus(userStatus)
+        .then(response => {
+            if (!response.resultCode) {
+                dispatch(setUserStatus(userStatus))
+            }
+        })
+}
+
 export let setUserInfo = (userInfo) => {return {type: 'SET-USER-INFO', userInfo: userInfo}};
-export let addPost = () => {return {type: 'ADD-POST'}};
-export let updateNewPostText = (text) => {return {type: 'UPDATE-NEW-POST-TEXT', text: text}};
+export let addPost = (postText) => {return {type: 'ADD-POST', postText: postText}};
+export let toggleIsFetching = (status) => {return {type: 'TOGGLE-IS-FETCHING', status: status}};
+export let setUserStatus = (userStatus) => {return {type: 'SET-USER-STATUS', userStatus: userStatus}};
+export let setUserID = (userID) => {return {type: 'SET-USER-ID', userID: userID}}
 
 
 export default profileReducer;

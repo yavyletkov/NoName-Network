@@ -19,17 +19,16 @@ let dialogsReducer = (state = defaultState, action) => {
     switch (action.type) {
         case 'SEND-MESSAGE': {
 
-            if (state.newMessageText) {
+            if (action.messageText) {
                 let stateCopy = {
                     ...state,
                     messagesData: [
                         ...state.messagesData,
                         {
                             id: state.messagesData[state.messagesData.length-1].id + 1,
-                            text: state.newMessageText
+                            text: action.messageText
                         }
                     ],
-                    newMessageText: ''
                 };
                 return stateCopy;
             } else return state;
@@ -45,5 +44,7 @@ let dialogsReducer = (state = defaultState, action) => {
             return state;
     }
 };
+
+export let sendMessage = (messageText) => { return {type: 'SEND-MESSAGE', messageText: messageText } };
 
 export default dialogsReducer;

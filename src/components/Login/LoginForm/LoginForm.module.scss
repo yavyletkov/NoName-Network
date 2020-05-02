@@ -1,0 +1,52 @@
+.loginForm {
+  margin-top: 20px;
+}
+
+.textInput {
+  border: none;
+  margin: 10px 0;
+  font-size: 30px;
+}
+
+.textInput::placeholder {
+  color: #bdbdbd
+}
+
+.textInput:hover {
+  background-color: #eeeeee;
+}
+
+.textInput:focus {
+  border: none;
+  box-shadow: none;
+  background-color: #eeeeee;
+  outline: none;
+}
+
+.checkboxText {
+  margin-left: 5px;
+  color: #525252;
+  font-size: 15px;
+}
+
+.label:hover {
+  background-color: #eeeeee;
+}
+
+.checkbox {
+  margin-top: 20px;
+}
+
+.button {
+  margin-top: 30px;
+  width: 80px;
+  height: 30px;
+  font-size: 20px;
+  background-color: #dbdbdb;
+  border: none;
+}
+
+.button:hover {
+  background-color: #e8e8e8;
+}
+

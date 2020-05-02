@@ -11,7 +11,7 @@ import {
     followThunkCreator,
     unFollowThunkCreator
 } from "../../redux/usersReducer"
-import {UsersAPI} from "../../api/api";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 // МЕТОДОМ SOME ДОБАВИТЬ ОТДЕЛЬНО ДИЗЕБЛЮЮЩИЕСЯ КНОПКИ ПОДПИСКИ
 
@@ -46,8 +46,8 @@ class UsersContainer extends React.Component {
                       currentPage={ this.props.currentPage }
                       followUser={ this.props.followUser}
                       unFollowUser={this.props.unFollowUser}
-                      isFetching={this.props.isFetching}
                       followingIsInProgress={this.props.followingIsInProgress}
+                      inProgress={this.props.inProgress}
             />
             </>
     }
@@ -61,6 +61,7 @@ let mapStateToProps = (state) => {
         currentPage: state.users.currentPage,
         isFetching: state.users.isFetching,
         followingIsInProgress: state.users.followingIsInProgress,
+        inProgress: state.users.inProgress
     }
 }
 
@@ -69,6 +70,6 @@ export default connect(mapStateToProps, {
     setPage, toggleFollowingIsInProgress,
     getUsersThunk: getUsersThunkCreator,
     followThunk: followThunkCreator,
-    unFollowThunk: unFollowThunkCreator})(UsersContainer)
+    unFollowThunk: unFollowThunkCreator})(withAuthRedirect(UsersContainer))
 
 

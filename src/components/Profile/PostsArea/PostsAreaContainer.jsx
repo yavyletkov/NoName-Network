@@ -1,6 +1,8 @@
 import PostsArea from './PostsArea';
 import {connect} from "react-redux";
-import {addPost, updateNewPostText} from "../../../redux/profileReducer"
+import {addPost} from "../../../redux/profileReducer"
+import {withAuthRedirect} from "../../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 let mapStateToProps = (state) => {
     return {
@@ -9,17 +11,8 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        updateNewPostText: (text) => {
-            dispatch(updateNewPostText(text));
-        },
-        addPost: () => {
-            dispatch(addPost());
-        }
-    }
-}
+export default compose(
+    connect(mapStateToProps, {addPost}),
+    withAuthRedirect
+)(PostsArea)
 
-const PostsAreaContainer = connect(mapStateToProps, mapDispatchToProps)(PostsArea)
-
-export default PostsAreaContainer;

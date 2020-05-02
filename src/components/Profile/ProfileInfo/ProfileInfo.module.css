@@ -18,8 +18,9 @@
 
 .userInfo {
     text-align: left;
-    padding: 20px;
+    padding: 10px 20px 20px;
     background-color: #fff;
+    border: 1px solid #dfdfdf;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
     color: #404040;
 }
@@ -31,6 +32,7 @@
     background-color: #fff;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border: 1px solid #dfdfdf;
 }
 
 .cover img {
@@ -44,6 +46,7 @@
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
     border-radius: 75px;
+    border: 1px solid #dfdfdf;
 }
 
 .userPhoto img {
@@ -56,10 +59,25 @@
     grid-area: userInfo;
 }
 
+.userInfo:first-child {
+    margin-top: 20px;
+}
+
+.aboutMe {
+
+}
+
 .fullName {
-    font-size: 15px;
+    /*font-family: 'Palanquin Dark', sans-serif;*/
+    font-family: 'Ramabhadra', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
     font-weight: bold;
     border-bottom: thin solid #B8B8B8;
     padding-bottom: 5px;
+    margin-top: 2px;
     box-sizing: border-box;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap');

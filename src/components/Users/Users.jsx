@@ -9,6 +9,7 @@ const Users = (props) => {
     for(let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
+    console.log(props)
 
     return <div className={s.users}>
 
@@ -17,8 +18,6 @@ const Users = (props) => {
                 return <span key={item} onClick={ () => props.onPageClick(item) } className={props.currentPage === item ? s.activePage : s.page}> {item} </span>
             })}
         </div>
-
-        {console.log('BBBBBBB', props)}
 
         {props.usersData.map(item => {
             return <div key={item.id} className={s.userCard}>
@@ -37,10 +36,10 @@ const Users = (props) => {
                 <div className={s.id}> id: {item.id} </div>
 
                 { item.followed ?
-                    <button disabled={props.followingIsInProgress} className={s.followBtn} onClick={() => props.onUnFollowClick(item.id)}>
+                    <button disabled={props.followingIsInProgress && props.inProgress.some(a => a === item.id)} className={s.followBtn} onClick={() => props.onUnFollowClick(item.id)}>
                         unfollow
                     </button> :
-                    <button disabled={props.followingIsInProgress} className={s.followBtn} onClick={() => props.onFollowClick(item.id)}>
+                    <button disabled={props.followingIsInProgress && props.inProgress.some(a => a === item.id)} className={s.followBtn} onClick={() => props.onFollowClick(item.id)}>
                         follow
                     </button>
                 }

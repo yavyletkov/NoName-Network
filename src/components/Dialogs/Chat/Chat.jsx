@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Chat.module.css';
 import Message from './Message/Message'
+import ChatForm from "./ChatForm/ChatForm";
 
 const Chat = (props) => {
 
@@ -8,32 +9,21 @@ const Chat = (props) => {
         return (<Message key={item.id} id={item.id} text={item.text} />)
     });
 
-    let newMessage = React.createRef();
-
-    let onMessageChange = () => {
-        let symbol = newMessage.current.value;
-        props.updateNewMessageText(symbol);
-    }
-
-    let onClick = () => {
-        props.sendMessage();
+    let onSubmit = (formData) => {
+        console.log(formData);
+        props.sendMessage(formData.messageText);
+        formData.messageText = '';
     };
 
     return (
-        <div className={s.container}>
+        <div className={s.wrapper}>
+
             <div className={s.chat}>
                 {messages}
             </div>
-            <div className={s.field}>
-                <textarea
-                    ref={ newMessage }
-                    className='textArea'
-                    value={props.newMessageText}
-                    placeholder='Type something'
-                    onChange={onMessageChange}>
-                </textarea>
-                <button onClick={ onClick }>Send</button>
-            </div>
+
+            <ChatForm onSubmit={onSubmit}/>
+
         </div>
     )
 }

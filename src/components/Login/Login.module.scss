@@ -1,0 +1,18 @@
+.loginWrapper {
+  grid-area: main;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding: 20px;
+
+  border: 1px solid #dfdfdf;
+
+  color: #404040;
+}
+
+.loginWrapper span {
+  font-size: 20px;
+}
+
+form {
+  margin-top: 20px;
+}

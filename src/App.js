@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
 import HeaderContainer from "./components/Header/HeaderContainer";
-import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
 import Dialogs from "./components/Dialogs/Dialogs";
+import Login from "./components/Login/Login"
 import UsersContainer from "./components/Users/UsersContainer";
 import {BrowserRouter, Route} from 'react-router-dom';
 import {Provider} from "react-redux";
 import store from "./redux/reduxStore";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import SidebarContainer from "./components/Sidebar/SidebarContainer";
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
             <BrowserRouter>
                 <div className="App">
                     <HeaderContainer />
-                    <Sidebar state={store.getState().sidebar}/>
+
+                    <SidebarContainer/>
 
                     <Route path='/profile/:userID?'
                            render={() => <ProfileContainer />}/>
@@ -27,6 +29,9 @@ function App() {
 
                     <Route path='/users'
                            render={() => <UsersContainer/>}/>
+
+                    <Route path='/login'
+                           render={() => <Login/>}/>
 
                     <Footer/>
                 </div>

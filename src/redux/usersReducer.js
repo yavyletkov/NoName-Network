@@ -7,6 +7,7 @@ let defaultState = {
     currentPage: 1,
     isFetching: false,
     followingIsInProgress: false,
+    inProgress: [],
 };
 
 
@@ -42,6 +43,12 @@ let usersReducer = (state = defaultState, action) => {
         case 'TOGGLE-FOLLOWING-IS-IN-PROGRESS': {
             return {...state, followingIsInProgress: action.status}
         }
+        case 'PUSH-IN-PROGRESS': {
+            return {...state, inProgress: [...state.inProgress, action.id]}
+        }
+        case 'CLEAR-IN-PROGRESS': {
+            return {...state, inProgress: [...state.inProgress.filter(item => item !== action.id)]}
+        }
         default: {
             return state;
         }
@@ -61,26 +68,28 @@ export const getUsersThunkCreator = (pageSize, currentPage) => (dispatch) => {
 export const unFollowThunkCreator = (id) => (dispatch) => {
     dispatch(toggleIsFetching(true));
     dispatch(toggleFollowingIsInProgress(true));
+    dispatch(pushInProgress(id));
 
     UsersAPI.unFollow(id)
         .then(response => {
             !response.resultCode ? dispatch(unFollowUser(id)) : alert('ошибка')
             dispatch(toggleIsFetching(false));
             dispatch(toggleFollowingIsInProgress(false));
-
+            dispatch(clearInProgress(id));
         })
 };
 
 export const followThunkCreator = (id) => (dispatch) => {
     dispatch(toggleIsFetching(true));
     dispatch(toggleFollowingIsInProgress(true));
+    dispatch(pushInProgress(id));
 
     UsersAPI.follow(id)
         .then(response => {
             !response.resultCode ? dispatch(followUser(id)) : alert('ошибка')
             dispatch(toggleIsFetching(false));
             dispatch(toggleFollowingIsInProgress(false));
-
+            dispatch(clearInProgress(id));
         })
 };
 
@@ -90,5 +99,8 @@ export let setUsers = (users, count) => {return {type: 'SET-USERS', usersData: u
 export let setPage = (number) => {return {type: 'SET-PAGE', page: number}};
 export let toggleIsFetching = (status) => {return {type: 'TOGGLE-IS-FETCHING', status: status}};
 export let toggleFollowingIsInProgress = (status) => {return {type: 'TOGGLE-FOLLOWING-IS-IN-PROGRESS', status: status}};
+export let pushInProgress = (id) => {return {type: 'PUSH-IN-PROGRESS', id: id}};
+export let clearInProgress = (id) => {return {type: 'CLEAR-IN-PROGRESS', id: id}};
+
 
 export default usersReducer;

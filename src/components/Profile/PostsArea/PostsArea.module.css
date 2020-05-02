@@ -1,6 +1,7 @@
 .postsArea {
     grid-area: postsArea;
     background-color: #fff;
+    border: 1px solid #dfdfdf;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
     color: #404040;
     text-align: left;
@@ -21,11 +22,4 @@
     padding: 5px;
     border-radius: 5px;
     border: thin solid #B8B8B8;
-}
-
-.postsArea button {
-    margin-top: 5px;
-    padding: 6px 20px;
-    background-color: #404040;
-    color: #fff;
 }
