@@ -9,7 +9,7 @@ const Sidebar = (props) => {
 
         <div className={s.menu}>
 
-            <NavLink className={s.menuItem} to={`/profile/${props.yourID}`} activeClassName={s.active}>
+            <NavLink className={s.menuItem} to={`/profile`} activeClassName={s.active}>
                 Profile
             </NavLink>
 

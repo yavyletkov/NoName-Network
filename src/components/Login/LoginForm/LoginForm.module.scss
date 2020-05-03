@@ -2,21 +2,26 @@
   margin-top: 20px;
 }
 
-.textInput {
+.field {
   border: none;
   margin: 10px 0;
   font-size: 30px;
 }
 
-.textInput::placeholder {
+.field.error {
+  border: 2px solid rgba(161, 0, 0, 0.55);
+  box-sizing: border-box;
+}
+
+.field::placeholder {
   color: #bdbdbd
 }
 
-.textInput:hover {
+.field:hover {
   background-color: #eeeeee;
 }
 
-.textInput:focus {
+.field:focus {
   border: none;
   box-shadow: none;
   background-color: #eeeeee;
@@ -50,3 +55,14 @@
   background-color: #e8e8e8;
 }
 
+.errorSpan, .warningSpan {
+  color: rgba(161, 0, 0, 0.55);
+  margin-left: 5px;
+}
+
+.summaryError {
+  color: rgba(161, 0, 0, 0.55);
+  padding: 10px;
+  border: 2px solid rgba(161, 0, 0, 0.55);
+  margin-top: 20px;
+}
