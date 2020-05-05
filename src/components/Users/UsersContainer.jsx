@@ -7,31 +7,38 @@ import {
     unFollowUser,
     setPage,
     toggleFollowingIsInProgress,
-    getUsersThunkCreator,
-    followThunkCreator,
-    unFollowThunkCreator
+    requestUsers,
+    requestFollow,
+    requestUnFollow
 } from "../../redux/usersReducer"
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {
+    getCurrentPage, getFollowingIsInProgress, getInProgress,
+    getIsFetchingUsers,
+    getPageSize,
+    getTotalUsersCount,
+    getUsersData
+} from "../../redux/usersSelectors";
 
 // МЕТОДОМ SOME ДОБАВИТЬ ОТДЕЛЬНО ДИЗЕБЛЮЮЩИЕСЯ КНОПКИ ПОДПИСКИ
 
 
 class UsersContainer extends React.Component {
     componentDidMount() {
-        this.props.getUsersThunk(this.props.pageSize, this.props.currentPage);
+        this.props.requestUsers(this.props.pageSize, this.props.currentPage);
     }
 
     onPageClick = (pageNumber) => {
         this.props.setPage(pageNumber);
-        this.props.getUsersThunk(this.props.pageSize, pageNumber);
+        this.props.requestUsers(this.props.pageSize, pageNumber);
     }
 
     onFollowClick = (id) => {
-        this.props.followThunk(id);
+        this.props.requestFollow(id);
     }
 
     onUnFollowClick = (id) => {
-        this.props.unFollowThunk(id);
+        this.props.requestUnFollow(id);
     }
 
     render() {
@@ -55,21 +62,20 @@ class UsersContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        usersData: state.users.usersData,
-        pageSize: state.users.pageSize,
-        totalUsersCount: state.users.totalUsersCount,
-        currentPage: state.users.currentPage,
-        isFetching: state.users.isFetching,
-        followingIsInProgress: state.users.followingIsInProgress,
-        inProgress: state.users.inProgress
+        usersData: getUsersData(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetchingUsers(state),
+        followingIsInProgress: getFollowingIsInProgress(state),
+        inProgress: getInProgress(state)
     }
 }
 
 export default connect(mapStateToProps, {
     followUser, unFollowUser,
     setPage, toggleFollowingIsInProgress,
-    getUsersThunk: getUsersThunkCreator,
-    followThunk: followThunkCreator,
-    unFollowThunk: unFollowThunkCreator})(withAuthRedirect(UsersContainer))
+    requestUsers, requestFollow, requestUnFollow
+})(withAuthRedirect(UsersContainer))
 
 

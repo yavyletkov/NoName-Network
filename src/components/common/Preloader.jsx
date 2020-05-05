@@ -8,10 +8,15 @@ let styles = [{
     transform: 'scale(1.2)',
 },
 {
+    position: 'fixed',
+    top: '50vh',
+    left: '50vh'
+},
+{
     position: 'absolute',
-    top: '50%',
-    left: '50%'
-}]
+    transform: 'scale(0.2)'
+}
+]
 
 const Preloader = (props) => {
     return <img style={props.id?styles[props.id]:styles[0]} src={preloader} alt={'preloader'}/>

@@ -3,26 +3,38 @@ import s from './PostsArea.module.css';
 import Post from './Post/Post';
 import PostForm from "./PostForm/PostForm";
 
-const PostsArea = (props) => {
+class PostsArea extends React.Component {
 
-    let posts = props.postsData.map(function(item) {
-        return (<Post key={item.id} id={item.id} text={item.text} />)
-    });
+    // componentDidMount() {
+    //     setTimeout(() => {
+    //         this.setState({a: 1})
+    //     }, 5000)
+    // } ПРОВЕРОЧКА SHOULDCOMPONENTUPDATE
 
-    const onSubmit = (formData) => {
-        console.log(formData)
-        props.addPost(formData.postText);
-        formData.postText = ''
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        return nextProps !== this.props || nextState !== this.state
     }
 
-    return <div className={s.postsArea}>
+    render() {
+        console.log('RENDER');
+        let posts = this.props.postsData.map(function (item) {
+            return (<Post key={item.id} id={item.id} text={item.text}/>)
+        });
 
-        <PostForm onSubmit={onSubmit}/>
+        const onSubmit = (formData) => {
+            this.props.addPost(formData.postText);
+            formData.postText = ''
+        }
 
-        <div className={s.list}>
-            { posts }
+        return <div className={s.postsArea}>
+
+            <PostForm onSubmit={onSubmit}/>
+
+            <div className={s.list}>
+                {posts}
+            </div>
         </div>
-    </div>
+    }
 }
 
 export default PostsArea;

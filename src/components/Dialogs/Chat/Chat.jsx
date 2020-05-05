@@ -10,7 +10,6 @@ const Chat = (props) => {
     });
 
     let onSubmit = (formData) => {
-        console.log(formData);
         props.sendMessage(formData.messageText);
         formData.messageText = '';
     };

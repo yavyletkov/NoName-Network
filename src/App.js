@@ -17,13 +17,13 @@ import {initializeApp} from "./redux/appReducer";
 class App extends React.Component {
 
     componentDidMount() {
-        debugger
+
         this.props.initializeApp()
     }
 
     render () {
         if (!this.props.isInitialized)
-            return <Preloader/>
+            return <Preloader />
         else return (
             <Provider store={store}>
 

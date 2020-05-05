@@ -9,7 +9,7 @@ const PostForm = (props) => {
             <Field class={s.textInput} component={'input'} placeholder={`What's up, dude?`} name={'postText'}/>
         </div>
 
-        <button className={s.button}>Make post!</button>
+        <button className={s.button}>Tell!</button>
     </form>
 }
 

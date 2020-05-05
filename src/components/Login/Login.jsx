@@ -7,7 +7,6 @@ import Preloader from "../common/Preloader";
 const Login = (props) => {
 
     let onSubmit = (formData) => {
-        console.log(formData)
         props.login(formData.email, formData.password, formData.rememberMe)
     }
 

@@ -55,31 +55,19 @@ let usersReducer = (state = defaultState, action) => {
     }
 }
 
-export const getUsersThunkCreator = (pageSize, currentPage) => (dispatch) => {
+export const requestUsers = (pageSize, page) => (dispatch) => {
     dispatch(toggleIsFetching(true));
+    dispatch(setPage(page));
 
-    UsersAPI.getUsers(pageSize, currentPage)
+
+    UsersAPI.getUsers(pageSize, page)
         .then(response => {
             dispatch(setUsers(response.items, response.totalCount));
             dispatch(toggleIsFetching(false));
         })
 };
 
-export const unFollowThunkCreator = (id) => (dispatch) => {
-    dispatch(toggleIsFetching(true));
-    dispatch(toggleFollowingIsInProgress(true));
-    dispatch(pushInProgress(id));
-
-    UsersAPI.unFollow(id)
-        .then(response => {
-            !response.resultCode ? dispatch(unFollowUser(id)) : alert('ошибка')
-            dispatch(toggleIsFetching(false));
-            dispatch(toggleFollowingIsInProgress(false));
-            dispatch(clearInProgress(id));
-        })
-};
-
-export const followThunkCreator = (id) => (dispatch) => {
+export const requestFollow = (id) => (dispatch) => {
     dispatch(toggleIsFetching(true));
     dispatch(toggleFollowingIsInProgress(true));
     dispatch(pushInProgress(id));
@@ -87,6 +75,20 @@ export const followThunkCreator = (id) => (dispatch) => {
     UsersAPI.follow(id)
         .then(response => {
             !response.resultCode ? dispatch(followUser(id)) : alert('ошибка')
+            dispatch(toggleIsFetching(false));
+            dispatch(toggleFollowingIsInProgress(false));
+            dispatch(clearInProgress(id));
+        })
+};
+
+export const requestUnFollow = (id) => (dispatch) => {
+    dispatch(toggleIsFetching(true));
+    dispatch(toggleFollowingIsInProgress(true));
+    dispatch(pushInProgress(id));
+
+    UsersAPI.unFollow(id)
+        .then(response => {
+            !response.resultCode ? dispatch(unFollowUser(id)) : alert('ошибка')
             dispatch(toggleIsFetching(false));
             dispatch(toggleFollowingIsInProgress(false));
             dispatch(clearInProgress(id));

@@ -19,10 +19,8 @@ let appReducer = (state = defaultState, action) => {
 export let initializationSuccessful = () => { return { type: 'INITIALIZATION-SUCCESSFUL' } };
 
 export let initializeApp = () => (dispatch) => {
-    debugger
     Promise.all([ dispatch(getAuthData()) ])
         .then( () => {
-            debugger
             dispatch(initializationSuccessful())
         } )
 }
