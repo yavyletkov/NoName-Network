@@ -1,11 +1,11 @@
 .postsArea {
     grid-area: postsArea;
-    background-color: #fff;
-    border: 1px solid #dfdfdf;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    /*background-color: #fff;*/
+    /*border: 1px solid #dfdfdf;*/
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.05);*/
     color: #404040;
     text-align: left;
-    padding: 20px;
+    /*padding: 20px;*/
 }
 
 .list {

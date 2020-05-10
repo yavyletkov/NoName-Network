@@ -10,12 +10,10 @@ class Status extends React.Component {
     };
 
     componentDidMount() {
-        debugger
         this.props.getUserStatus(this.props.id)
     }
 
     componentDidUpdate(prevProps, prevState) {
-        debugger
         this.props.getUserStatus(this.props.id)
         if (prevProps.userStatus !== this.props.userStatus) {
             this.setState({
@@ -43,7 +41,6 @@ class Status extends React.Component {
     }
 
     // onSaveButtonClick = () => {
-    //     debugger
     //     this.props.updateUserStatus(this.state.userStatus)
     // }
 

@@ -1,11 +1,7 @@
 .friendPreview {
-    display: inline-block;
-
-    margin: 0 auto;
-    width: 33.3%;
     min-width: 40px;
-    /* background-color: gray; */
-    margin-bottom: 5px;
+    /*background-color: gray;*/
+    margin: 0 auto 10px;
     /* background-color: red; */
 }
 

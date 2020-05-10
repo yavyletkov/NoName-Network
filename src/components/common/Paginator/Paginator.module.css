@@ -1,0 +1,14 @@
+.page {
+    margin: 3px;
+    cursor: pointer;
+}
+
+.activePage {
+    margin: 3px;
+    font-weight: bold;
+}
+
+.paginator {
+    color: #404040;
+    margin-bottom: 20px;
+}

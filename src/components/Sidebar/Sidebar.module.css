@@ -11,7 +11,6 @@
     text-decoration: none;
     color: inherit;
     transition: all 200ms;
-    padding-left: 20px;
 }
 
 .sidebar a:visited {
@@ -19,28 +18,39 @@
     box-sizing: border-box;
 }
 
-.sidebar a.active {
-    padding-left: 30px;
-}
-
-.sidebar a.active:hover {
-    padding-left: 30px;
-}
-
-.sidebar a:hover {
-    padding-left: 25px;
-}
-
 .menu {
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    padding: 5px 0;
-    border: 1px solid #dfdfdf;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /*border: 1px solid #dfdfdf;*/
 }
 
 .menuItem {
-    padding: 10px 20px;
-    /* border: thin solid black; */
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /*border: thin solid black;*/
+    padding: 10px 0;
+}
+
+.menuItem img {
+    margin-left: 20px;
+}
+
+.menuItem:first-child {
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: -10px;
+    margin-right: 0px;
+}
+
+.text {
+    padding: 7px;
+    font-size: 15px;
+    background-color: #404040;
+    /*border: 1px solid #dfdfdf;*/
+    color: white;
+    position: absolute;
+    right: 84%;
+    border-radius: 5px;
 }

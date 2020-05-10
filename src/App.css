@@ -23,12 +23,12 @@ code {
     grid-template-areas:
     "sidebar main"
     "footer footer";
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 10% 90%;
     grid-template-rows: 1fr 40px;
     grid-column-gap: 30px;
     grid-row-gap: 20px;
 
-    margin-left: calc(10% - 10px);
-    margin-right: 10%;
+    margin-left: calc(13% - 10px);
+    margin-right: 13%;
     color: #fff;
 }

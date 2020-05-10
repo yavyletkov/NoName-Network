@@ -1,5 +1,6 @@
 import React from 'react';
-import s from './Post.module.css';
+import s from './Post.module.css'
+import likeIcon from "../../../../assets/images/icons/like.png"
 
 const Post = (props) => {
     return (
@@ -10,7 +11,7 @@ const Post = (props) => {
         </div>
 
         <div className={s.footer}>
-            0 likes | 0 reposts
+            0 <img src={likeIcon} alt={'like'}/>| 0 reposts
         </div>
     </div>)
 

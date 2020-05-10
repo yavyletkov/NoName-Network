@@ -1,9 +1,10 @@
 .post {
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: thin solid #E3E3E3;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
@@ -25,3 +26,11 @@
     /* background-color: #E3E3E3; */
     border-radius: 0px 0px 5px 5px;
 }
+
+.footer img {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+

@@ -8,10 +8,15 @@
     margin-bottom: 5px;
     border: thin solid #B8B8B8;
     resize: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .postForm {
     margin-top: 0px;
+    width: 100%;
+
+    /*padding: 20px;*/
+    box-sizing: border-box;
 }
 
 .button {

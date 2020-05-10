@@ -74,9 +74,9 @@
     text-transform: uppercase;
     font-weight: bold;
     border-bottom: thin solid #B8B8B8;
-    padding-bottom: 5px;
-    margin-top: 2px;
     box-sizing: border-box;
+    margin-top: -7px;
+    margin-bottom: -20px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap');
