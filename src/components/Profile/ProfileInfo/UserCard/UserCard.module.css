@@ -1,0 +1,41 @@
+.userCard {
+    grid-area: userCard;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 0px;
+    border: 1px solid #dfdfdf;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.userPhoto {
+    width: 220px;
+}
+
+.userPhoto img {
+    width: 220px;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+}
+
+.fullName {
+    /*font-family: 'Palanquin Dark', sans-serif;*/
+    text-align: center;
+    color: #404040;
+    font-family: 'Ramabhadra', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-sizing: border-box;
+    /*margin-top: -7px;*/
+    /*margin-bottom: -20px;*/
+}
+
+.photoUpload {
+    opacity: 10;
+    position: relative;
+    top: -95px;
+    left: 10px
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap');

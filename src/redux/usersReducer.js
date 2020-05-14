@@ -2,7 +2,7 @@ import {UsersAPI} from "../api/api";
 
 let defaultState = {
     usersData: [],
-    pageSize: 20,
+    pageSize: 25,
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: false,

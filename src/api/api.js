@@ -48,6 +48,18 @@ export const ProfileAPI = {
                 return response.data
             })
     },
+    uploadUserPhoto (file) {
+        const formData = new FormData();
+        formData.append('image', file);
+        return instance.put(`/profile/photo`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+            .then(response => {
+                return response.data
+            })
+    },
 
 };
 

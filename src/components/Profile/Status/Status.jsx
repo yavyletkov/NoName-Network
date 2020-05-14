@@ -26,7 +26,7 @@ class Status extends React.Component {
     }
 
     activateEditMode = () => {
-        if (this.props.id === this.props.yourID) {
+        if (this.props.id === this.props.authorizedUserID) {
             this.setState(
                 {editMode: true}
             )
@@ -58,8 +58,8 @@ class Status extends React.Component {
                     { !this.state.editMode ?
                         <div onClick={this.activateEditMode}>
                             <span> {this.props.userStatus ?
-                                <><span>{this.props.userStatus}</span><span>{this.props.id===this.props.yourID?<span className={s.clickToChange}>click to change</span>:null}</span></> :
-                                <span className={s.noStatus}>{this.props.id===this.props.yourID?'no status (click to change)':'no status'}</span>} </span>
+                                <><span>{this.props.userStatus}</span><span>{this.props.id===this.props.authorizedUserID?<span className={s.clickToChange}>click to change</span>:null}</span></> :
+                                <span className={s.noStatus}>{this.props.id===this.props.authorizedUserID?'no status (click to change)':'no status'}</span>} </span>
                             {  }
                         </div> :
                         <div>

@@ -1,8 +1,12 @@
 .statusWrapper {
   font-size: 13px;
+  //line-height: .9;
+  color: #404040;
+  text-align: center;
 }
 
 .clickToChange {
+  display: block;
   font-size: 10px;
   color: #b0b0b0;
   margin-left: 3px;

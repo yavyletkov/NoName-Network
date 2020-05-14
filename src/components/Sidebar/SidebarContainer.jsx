@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar";
 
 const mapStateToProps = (state) => {
     return {
-        yourID: state.auth.userID,
+        authorizedUserID: state.auth.userID,
         state: state.sidebar
     }
 }

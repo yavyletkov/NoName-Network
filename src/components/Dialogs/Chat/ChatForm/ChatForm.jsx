@@ -6,7 +6,7 @@ const ChatForm = (props) => {
     return <form className={s.chatForm} onSubmit={props.handleSubmit}>
 
         <span>
-            <Field class={s.textInput} name={'messageText'} component={'input'} placeholder={'Your message'}/>
+            <Field className={s.textInput} name={'messageText'} component={'input'} placeholder={'Your message'}/>
         </span>
 
         <button className={s.button}>Send</button>

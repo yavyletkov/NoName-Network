@@ -3,7 +3,7 @@ import './App.css';
 import HeaderContainer from "./components/Header/HeaderContainer";
 // import Footer from "./components/Footer/Footer";
 import Dialogs from "./components/Dialogs/Dialogs";
-import UsersContainer from "./components/Users/UsersContainer";
+// import UsersContainer from "./components/Users/UsersContainer";
 import {BrowserRouter, Route} from 'react-router-dom';
 import {connect, Provider} from "react-redux";
 import store from "./redux/reduxStore";
@@ -12,12 +12,14 @@ import SidebarContainer from "./components/Sidebar/SidebarContainer";
 import LoginContainer from "./components/Login/LoginContainer";
 import Preloader from "./components/common/Preloader";
 import {initializeApp} from "./redux/appReducer";
+import {withSuspense} from "./hoc/withSuspense";
+
+const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer')); // Ленивая загрузка
 
 
 class App extends React.Component {
 
     componentDidMount() {
-
         this.props.initializeApp()
     }
 
@@ -40,7 +42,7 @@ class App extends React.Component {
                                render={() => <Dialogs chatListData={store.getState().dialogs.chatListData}/>}/>
 
                         <Route path='/users'
-                               render={() => <UsersContainer/>}/>
+                               render={withSuspense(UsersContainer)}/>
 
                         <Route path='/login'
                                render={() => <LoginContainer/>}/>
