@@ -7,7 +7,7 @@ const UserCard = (props) => {
 
     const onUserPhotoSelected = (e) => {
         if (e.target.files.length) {
-            props.uploadUserPhoto(e.target.files[0])
+            props.updateUserPhoto(e.target.files[0])
         }
     }
 
@@ -29,7 +29,9 @@ const UserCard = (props) => {
 
             <div className={s.photoUpload}>
                 {props.id === props.authorizedUserID ?
-                    <input onChange={onUserPhotoSelected} name="userPhoto" type="file"/> :
+                    <label className={s.label}>CHANGE PHOTO
+                        <input name={'uploadPhoto'} className={s.input} onChange={onUserPhotoSelected} type="file"/>
+                    </label> :
                     null}
             </div>
 

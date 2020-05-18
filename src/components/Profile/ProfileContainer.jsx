@@ -8,8 +8,7 @@ import {
     toggleIsFetching,
     getUserStatus,
     updateUserStatus,
-    uploadUserPhoto,
-    // setUserPhotos,
+    updateUserPhoto, updateUserInfo,
 } from "../../redux/profileReducer";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
@@ -25,12 +24,12 @@ class ProfileContainer extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+
         this.refreshProfile()
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        debugger
+
         if (this.props.match.params.userID !== prevProps.match.params.userID) {
             this.refreshProfile()
         }
@@ -56,8 +55,7 @@ const mapStateToProps = (state) => {
 
 export default compose(
     connect(mapStateToProps, {
-        toggleIsFetching, setUserInfo, getProfile, getUserStatus, updateUserStatus, uploadUserPhoto,
-        // setUserPhotos
+        toggleIsFetching, setUserInfo, getProfile, getUserStatus, updateUserStatus, updateUserPhoto, updateUserInfo
     }),
     withRouter,
 )(ProfileContainer)

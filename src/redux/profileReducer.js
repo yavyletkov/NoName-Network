@@ -1,4 +1,5 @@
 import {ProfileAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 let defaultState = {
     postsData: [
@@ -48,7 +49,11 @@ let profileReducer = (state = defaultState, action) => {
             return {...state, isFetching: action.status}
         }
         case 'SET-USER-INFO': {
-            return {...state, userInfo: action.userInfo}
+            if (action.withoutPhotos) {
+                let photos = state.userInfo.photos;
+                return {...state, userInfo: {...action.userInfo, photos}}
+            }
+            return {...state, userInfo: {...action.userInfo}}
         }
         case 'SET-USER-ID': {
             return {...state, userID: action.userID}
@@ -57,7 +62,6 @@ let profileReducer = (state = defaultState, action) => {
             return {...state, userStatus: action.userStatus}
         }
         case 'SET-NEW-USER-PHOTOS': {
-            debugger
             return {...state, userInfo: {...state.userInfo, photos: action.photos}}
         }
         default: {
@@ -80,11 +84,13 @@ export const getProfile = (id) => (dispatch) => {
 }
 
 export const getUserStatus = (id) => (dispatch) => {
-    ProfileAPI.getUserStatus(id)
+    if (id) {
+        ProfileAPI.getUserStatus(id)
         .then(response => {
-
             dispatch(setUserStatus(response))
         })
+    }
+
 }
 
 export const updateUserStatus = (userStatus) => (dispatch) => {
@@ -93,27 +99,51 @@ export const updateUserStatus = (userStatus) => (dispatch) => {
             if (!response.resultCode) {
                 dispatch(setUserStatus(userStatus))
             }
-
         })
 }
 
-export const uploadUserPhoto = (file) => (dispatch) => {
-    ProfileAPI.uploadUserPhoto(file)
+export const updateUserPhoto = (file) => (dispatch) => {
+    ProfileAPI.updateUserPhoto(file)
         .then(response => {
             if (!response.resultCode) {
-                debugger
                 dispatch(setNewUserPhotos(response.data.photos));
             }
             else alert(response.messages[0])
         })
 }
 
-export let setUserInfo = (userInfo) => {return {type: 'SET-USER-INFO', userInfo: userInfo}};
+export const updateUserInfo = (userInfo) => (dispatch) => {
+    return ProfileAPI.updateUserInfo(userInfo)
+        .then(response => {
+            if (!response.resultCode) {
+                dispatch(setUserInfo(userInfo, true));
+            }
+            else {
+                let message = response.messages.length > 0 ? response.messages[0] : 'some error';
+                dispatch(stopSubmit('userInfo', {_error: message}));
+                alert(response.messages[0])
+                return Promise.reject(response.messages[0])
+            }
+        })
+}
+
+export let setUserInfo = (userInfo, withoutPhotos) => {return {type: 'SET-USER-INFO', userInfo: userInfo, withoutPhotos: withoutPhotos}};
 export let addPost = (postText) => {return {type: 'ADD-POST', postText: postText}};
 export let toggleIsFetching = (status) => {return {type: 'TOGGLE-IS-FETCHING', status: status}};
 export let setUserStatus = (userStatus) => {return {type: 'SET-USER-STATUS', userStatus: userStatus}};
 export let setUserID = (userID) => {return {type: 'SET-USER-ID', userID: userID}};
 export let setNewUserPhotos = (photos) => {return {type: 'SET-NEW-USER-PHOTOS', photos}};
 
-
 export default profileReducer;
+
+
+// education form for fmor // ЭТО НАПИСАЛА МОЯ ЖЕНА СО СЛОВАМИ "СЕЙЧАС Я ТЕБЕ ВСЁ ПОЧИНЮ"
+//                    enother
+// else
+//     if (do begin a:w-3;)
+//         program server
+// stert to program server
+// do {
+//     run
+// }
+

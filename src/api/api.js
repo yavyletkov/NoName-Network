@@ -48,7 +48,7 @@ export const ProfileAPI = {
                 return response.data
             })
     },
-    uploadUserPhoto (file) {
+    updateUserPhoto (file) {
         const formData = new FormData();
         formData.append('image', file);
         return instance.put(`/profile/photo`, formData, {
@@ -60,6 +60,11 @@ export const ProfileAPI = {
                 return response.data
             })
     },
+    updateUserInfo (userInfo) {
+        return instance.put('/profile', userInfo)
+            .then(response => response.data)
+    }
+
 
 };
 

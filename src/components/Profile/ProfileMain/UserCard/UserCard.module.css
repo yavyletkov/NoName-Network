@@ -1,40 +1,64 @@
 .userCard {
+    position: relative;
     grid-area: userCard;
     border-radius: 20px;
-    background-color: #fff;
-    padding: 0px;
+    background-color: #303030;
+    padding-bottom: 15px;
     border: 1px solid #dfdfdf;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .userPhoto {
     width: 220px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 .userPhoto img {
-    width: 220px;
-    height: auto;
+    width: 218px;
+    height: 220px;
     border-radius: 20px 20px 0 0;
 }
 
 .fullName {
     /*font-family: 'Palanquin Dark', sans-serif;*/
     text-align: center;
-    color: #404040;
     font-family: 'Ramabhadra', sans-serif;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
     box-sizing: border-box;
-    /*margin-top: -7px;*/
-    /*margin-bottom: -20px;*/
+    color: #cacaca;
+    line-height: 1.2;
+    margin-bottom: 10px;
 }
 
 .photoUpload {
-    opacity: 10;
-    position: relative;
-    top: -95px;
-    left: 10px
+    opacity: 100%;
+    position: absolute;
+    top: 195px;
+    left: 10px;
+}
+
+.input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.label {
+    cursor: pointer;
+    background-color: rgba(48, 48, 48, 0.8);
+    padding: 5px 7px;
+    color: #cacaca;
+    font-size: 12px;
+}
+
+.label:hover {
+    background-color: #7c7c7c;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap');

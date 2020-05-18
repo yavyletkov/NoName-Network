@@ -1,0 +1,43 @@
+.editInfoForm {
+    position: relative;
+    box-sizing: border-box;
+    grid-area: userInfo;
+    display: grid;
+    grid-template-rows: 30% 70%;
+    background-color: white;
+    color: #404040;
+    padding: 20px;
+}
+
+.jobAndAboutMeContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contactsWrapper {
+    margin-top: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #eeeeee;
+}
+
+.field {
+    margin-left: 5px;
+}
+
+.summaryError {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    right: 10px;
+    max-width: 150px;
+    color: rgb(161, 91, 95);
+    padding: 10px;
+    border: 2px solid rgb(161, 91, 95);
+}

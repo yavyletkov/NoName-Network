@@ -16,7 +16,7 @@ class PostsArea extends React.Component {
     }
 
     onSubmit (formData) {
-        debugger
+
         this.props.addPost(formData.postText);
         formData.postText = ''
     }
@@ -28,7 +28,7 @@ class PostsArea extends React.Component {
         });
 
         // const onSubmit = (formData) => {
-        //     debugger
+        //
         //     this.props.addPost(formData.postText);
         //     formData.postText = ''
         // }

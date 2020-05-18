@@ -1,11 +1,11 @@
 import React from 'react';
 import s from './Profile.module.css';
 import PostsAreaContainer from "./PostsArea/PostsAreaContainer";
-import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import ProfileMain from "./ProfileMain/ProfileMain";
 
 const Profile = (props) => {
     return <main className={s.profile}>
-        <ProfileInfo {...props} />
+        <ProfileMain {...props} />
         <PostsAreaContainer />
     </main>
 }

@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap');
+
 .profile {
     display: grid;
     grid-template-areas:
             "userCard userInfo";
     grid-template-columns: 220px 1fr;
-    grid-template-rows: 300px;
+
     grid-column-gap: 20px;
     grid-row-gap: 10px;
     color: #fff;
@@ -14,13 +17,3 @@
     text-align: left;
     margin-bottom: 20px;
 }
-
-.userInfo {
-    grid-area: userInfo;
-    background-color: white;
-    color: #404040;
-}
-
-
-@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap');
