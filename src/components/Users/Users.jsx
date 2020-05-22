@@ -4,10 +4,14 @@ import {NavLink} from "react-router-dom";
 import Paginator from "../common/Paginator/Paginator";
 
 const Users = (props) => {
+
+    console.log('current page in state: ', props.currentPage)
+
     return <div className={s.users}>
 
         <Paginator totalItemsCount={props.totalUsersCount}
-                   pageSize={props.pageSize} onPageClick={props.onPageClick} currentPage={props.currentPage}/>
+                   pageSize={props.pageSize} onPageClick={props.onPageClick}
+                   currentPage={props.currentPage} urlPrefix={'users'}/>
 
         <div className={s.usersWrapper}>
 

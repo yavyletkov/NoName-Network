@@ -60,7 +60,7 @@ const UserInfo = (props) => {
     if (!editMode) {
         return <div className={s.userInfo}>
 
-            <div className={s.jobAndAboutMeContainer}>
+            <div className={s.jobAndAboutMeWrapper}>
 
                 <div className={s.lookingForAJob}>
                     <b>Am I looking for a job right now:</b> {props.userInfo.lookingForAJob ? 'yes' : 'no'}

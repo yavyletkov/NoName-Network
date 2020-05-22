@@ -12,6 +12,13 @@
     color: #404040;
     margin-bottom: 20px;
 }
+
+.paginator a, .paginator a:visited{
+    text-decoration: none;
+    color: #404040;
+    cursor: pointer;
+}
+
 .btn {
     margin-bottom: 1rem;
 }

@@ -1,3 +1,10 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /*border: 1px solid #dfdfdf;*/
+}
+
 .sidebar {
     grid-area: sidebar;
     text-align: left;
@@ -18,39 +25,63 @@
     box-sizing: border-box;
 }
 
-.menu {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    /*border: 1px solid #dfdfdf;*/
-}
-
 .menuItem {
     /*border: thin solid black;*/
-    padding: 10px 0;
-}
-
-.menuItem img {
-    margin-left: 20px;
-}
-
-.menuItem:first-child {
+    padding: 0px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .icon {
-    width: 32px;
-    height: 32px;
-    margin-bottom: -10px;
-    margin-right: 0px;
+    /*background-color: #C4FF9C;*/
+    opacity: 80%;
+    padding: 10px;
+    border-radius: 30px;
+    transition: all 400ms;
+}
+
+.icon.active {
+    background-color: #C4FF9C;
+}
+
+.menuItemWrapper {
+    position: relative;
 }
 
 .text {
     padding: 7px;
     font-size: 15px;
     background-color: #404040;
-    /*border: 1px solid #dfdfdf;*/
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
     position: absolute;
-    right: 84%;
+    right: 50px;
     border-radius: 5px;
+}
+
+
+.materialIcons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 28px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
 }

@@ -1,5 +1,4 @@
 .statusWrapper {
-  cursor: pointer;
   font-size: 13px;
   //line-height: .9;
   color: #cacaca;
@@ -7,6 +6,7 @@
 }
 
 .clickToChange {
+  cursor: pointer;
   display: block;
   font-size: 10px;
   color: #737373;

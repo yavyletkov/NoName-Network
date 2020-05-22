@@ -25,7 +25,9 @@ import {
 
 class UsersContainer extends React.Component {
     componentDidMount() {
-        this.props.requestUsers(this.props.pageSize, this.props.currentPage);
+        let page = this.props.match.params.page ? this.props.match.params.page : this.props.currentPage;
+        this.props.setPage(page);
+        this.props.requestUsers(this.props.pageSize, page)
     }
 
     onPageClick = (pageNumber) => {
@@ -42,6 +44,7 @@ class UsersContainer extends React.Component {
     }
 
     render() {
+
         return <>
             { this.props.isFetching === true ? <Preloader/> : null }
             <Users onPageClick={ this.onPageClick }
@@ -55,6 +58,7 @@ class UsersContainer extends React.Component {
                       unFollowUser={this.props.unFollowUser}
                       followingIsInProgress={this.props.followingIsInProgress}
                       inProgress={this.props.inProgress}
+                      setPage={this.props.setPage}
             />
             </>
     }

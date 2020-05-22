@@ -1,8 +1,9 @@
 import s from "./Paginator.module.css";
 import React, {useState} from "react";
 import Select from 'react-select'
+import {NavLink} from "react-router-dom";
 
-const Paginator = ({totalItemsCount, pageSize, currentPage, onPageClick}) => {
+const Paginator = ({totalItemsCount, pageSize, currentPage, onPageClick, urlPrefix}) => {
 
     let pagesCount = Math.ceil(totalItemsCount / pageSize);
     let pages = [];
@@ -10,7 +11,7 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageClick}) => {
         pages.push({value: i, label: i});
     }
 
-    let [betterType, setBetterType] = useState(true)
+    let [betterType, setBetterType] = useState(false)
 
     let activateBetterType = () => {
         setBetterType(true)
@@ -31,9 +32,10 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageClick}) => {
                 </div>
                 :
                 <div className={s.paginator}>
-                    {pages.map(item => {
-                        return <span key={item.value} onClick={() => onPageClick(item.value)}
-                                     className={currentPage === item.value ? s.activePage : s.page}> {item.value} </span>
+                    {pages.map(item => {debugger
+                        return <NavLink to={`/${urlPrefix}/${item.value}`}><span key={item.value} onClick={() => onPageClick(item.value)}
+                                     className={+currentPage === item.value ? s.activePage : s.page}> {item.value} </span>
+                        </NavLink>
                     })}
                 </div>
             }
