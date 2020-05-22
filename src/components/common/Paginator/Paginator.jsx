@@ -32,7 +32,7 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageClick, urlPref
                 </div>
                 :
                 <div className={s.paginator}>
-                    {pages.map(item => {debugger
+                    {pages.map(item => {
                         return <NavLink to={`/${urlPrefix}/${item.value}`}><span key={item.value} onClick={() => onPageClick(item.value)}
                                      className={+currentPage === item.value ? s.activePage : s.page}> {item.value} </span>
                         </NavLink>

@@ -19,6 +19,12 @@
     background-color: #404040;
     color: #fff;
     margin-left: 3%;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #8a8a8a;
 }
 
 .chatForm {
