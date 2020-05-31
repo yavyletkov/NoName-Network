@@ -6,7 +6,7 @@ import {Field, reduxForm} from "redux-form";
 
 const EditInfoForm = (props) => {
 
-    console.log('props', props)
+    // console.log('props', props)
 
     const renderField = ({input, placeholder, type, meta: {touched, error, warning}}) => {
 

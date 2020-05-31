@@ -1,16 +1,14 @@
 import s from "./Users.module.scss";
 import React from "react";
 import {NavLink} from "react-router-dom";
-import Paginator from "../common/Paginator/Paginator";
+import Pagination from "../common/Paginator/Pagination";
 
 const Users = (props) => {
 
-    console.log('current page in state: ', props.currentPage)
-
     return <div className={s.users}>
 
-        <Paginator totalItemsCount={props.totalUsersCount}
-                   pageSize={props.pageSize} onPageClick={props.onPageClick}
+        <Pagination totalItemsCount={props.totalUsersCount}
+                   pageSize={props.pageSize} onPageChange={props.onPageChange}
                    currentPage={props.currentPage} urlPrefix={'users'}/>
 
         <div className={s.usersWrapper}>
@@ -45,11 +43,9 @@ const Users = (props) => {
                             </button>
                         }
                     </div>
-
                 </div>
             })}
         </div>
-
     </div>
 }
 

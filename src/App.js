@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Dialogs from "./components/Dialogs/Dialogs";
-import {BrowserRouter, Redirect, Route} from 'react-router-dom';
+import {HashRouter, Redirect, Route} from 'react-router-dom';
 import {connect, Provider} from "react-redux";
 import store from "./redux/reduxStore";
 import ProfileContainer from "./components/Profile/ProfileContainer";
@@ -38,7 +38,7 @@ class App extends React.Component {
         else return (
             <Provider store={store}>
 
-                <BrowserRouter>
+                <HashRouter>
                     <div className="App">
                         <HeaderContainer />
 
@@ -59,16 +59,14 @@ class App extends React.Component {
                         <Route path='/login'
                                render={() => <LoginContainer/>}/>
 
-                        <Route exact path='*'
-                               render={() => <div style={{'color': '#6c6c6c', 'text-align': 'center', 'font-size': '17px', 'margin-top': '10px'}}>
-                                   <b>404 <br/>PAGE DOES NOT EXIST</b>
-                               </div>}/>
-
-
+                        {/*<Route path='*'*/}
+                        {/*       render={() => <div style={{'color': '#6c6c6c', 'textAlign': 'center', 'fontSize': '17px', 'marginTop': '10px'}}>*/}
+                        {/*           <b>404 <br/>PAGE DOES NOT EXIST</b>*/}
+                        {/*       </div>}/>*/}
 
                         {/*<Footer/>*/}
                     </div>
-                </BrowserRouter>
+                </HashRouter>
             </Provider>
         )
     }

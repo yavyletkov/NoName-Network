@@ -46,7 +46,7 @@ class Status extends React.Component {
 
     onUserStatusChange = (e) => {
         this.setState({userStatus: e.currentTarget.value})
-        console.log('добавил символ в статус')
+        // console.log('добавил символ в статус')
     }
 
     render() {

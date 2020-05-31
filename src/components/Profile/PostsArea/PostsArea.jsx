@@ -22,7 +22,7 @@ class PostsArea extends React.Component {
     }
 
     render() {
-        console.log('RENDER');
+        // console.log('RENDER');
         let posts = this.props.postsData.map(function (item) {
             return (<Post key={item.id} id={item.id} text={item.text}/>)
         });

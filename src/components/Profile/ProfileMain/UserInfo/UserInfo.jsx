@@ -12,7 +12,7 @@ const UserInfo = (props) => {
     }
 
     const onEditInfoFormSubmit = (formData) => {
-        console.log('formdata', formData)
+        // console.log('formdata', formData)
         let userInfoToSend = {
             "aboutMe": formData.aboutMe,
             "contacts": {

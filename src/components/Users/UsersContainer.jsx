@@ -30,7 +30,7 @@ class UsersContainer extends React.Component {
         this.props.requestUsers(this.props.pageSize, page)
     }
 
-    onPageClick = (pageNumber) => {
+    onPageChange = (pageNumber) => {
         this.props.setPage(pageNumber);
         this.props.requestUsers(this.props.pageSize, pageNumber);
     }
@@ -47,7 +47,7 @@ class UsersContainer extends React.Component {
 
         return <>
             { this.props.isFetching === true ? <Preloader/> : null }
-            <Users onPageClick={ this.onPageClick }
+            <Users onPageChange={ this.onPageChange }
                       onFollowClick={this.onFollowClick}
                       onUnFollowClick={this.onUnFollowClick}
                       usersData={ this.props.usersData }
