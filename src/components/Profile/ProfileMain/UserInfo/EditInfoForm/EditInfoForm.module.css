@@ -22,7 +22,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #eeeeee;
 }
 
 .field {
@@ -40,4 +39,16 @@
     color: rgb(161, 91, 95);
     padding: 10px;
     border: 2px solid rgb(161, 91, 95);
+}
+
+.saveChangesButton {
+    border-radius: 3px;
+    border: none;
+    background-color: #d5ffb8;
+    transition: all 300ms;
+    color: #383233;
+}
+
+.saveChangesButton:hover {
+    background-color: #c3ffa9;
 }

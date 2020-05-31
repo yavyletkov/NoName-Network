@@ -35,6 +35,18 @@
     color: #b0b0b0;
 }
 
+.activateEditModeButton {
+    border-radius: 3px;
+    border: none;
+    background-color: #d5ffb8;
+    transition: all 300ms;
+    color: #383233;
+}
+
+.activateEditModeButton:hover {
+    background-color: #c3ffa9;
+}
+
 .materialIcons {
     font-family: 'Material Icons';
     font-weight: normal;
