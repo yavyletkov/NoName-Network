@@ -41,6 +41,11 @@
     transition: all 400ms;
 }
 
+.icon img {
+    width: 30px;
+    opacity: 90%;
+}
+
 .icon.active {
     background-color: #C4FF9C;
 }

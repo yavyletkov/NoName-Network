@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Post.module.css'
-import likeIcon from "../../../../assets/images/icons/like.png"
+import likeIcon from "../../../../assets/images/outline_favorite_black_18dp.png"
 
 const Post = (props) => {
     return (
