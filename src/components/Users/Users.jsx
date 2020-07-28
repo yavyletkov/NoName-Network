@@ -2,6 +2,8 @@ import s from "./Users.module.scss";
 import React from "react";
 import {NavLink} from "react-router-dom";
 import Pagination from "../common/Paginator/Pagination";
+import defaultUserIcon from './../../assets/images/default-user.jpg'
+
 
 const Users = (props) => {
 
@@ -20,7 +22,7 @@ const Users = (props) => {
                     <NavLink to={'/profile/' + item.id}>
                         <img className={s.ava}
                              alt={item.name}
-                             src={item.photos.large ? item.photos.large : 'https://www.nelson-chambers.co.uk/front/images/default-user.jpg'}/>
+                             src={item.photos.large ? item.photos.large : defaultUserIcon}/>
                     </NavLink>
 
                     <div className={s.cardBody}>

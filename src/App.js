@@ -42,7 +42,7 @@ class App extends React.Component {
                     <div className="App">
                         <HeaderContainer />
 
-                        <SidebarContainer/>
+                        <SidebarContainer />
 
                         <Route exact path='/'
                                render={() => <Redirect to={'/profile'}/>}/>

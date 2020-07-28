@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './UserCard.module.css';
-import Status from "../../Status/Status";
+import Status from '../../Status/Status';
+import defaultUserIcon from './../../../../assets/images/default-user.jpg'
 
 
 const UserCard = (props) => {
@@ -11,7 +12,7 @@ const UserCard = (props) => {
         }
     }
 
-    let userPhotoURL = props.userInfo.photos.large || 'https://www.nelson-chambers.co.uk/front/images/default-user.jpg';
+    let userPhotoURL = props.userInfo.photos.large || defaultUserIcon;
 
     return <div className={s.userCard}>
 

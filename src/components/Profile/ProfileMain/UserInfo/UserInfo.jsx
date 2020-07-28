@@ -80,7 +80,7 @@ const UserInfo = (props) => {
                 {Contact('Github', props.userInfo.contacts.github)}
                 {Contact('VK', props.userInfo.contacts.vk)}
                 {Contact('Website', props.userInfo.contacts.website)}
-                {Contact('Youtube', props.userInfo.contacts.github)}
+                {Contact('Youtube', props.userInfo.contacts.youtube)}
                 {Contact('Instagram', props.userInfo.contacts.instagram)}
                 {Contact('Facebook', props.userInfo.contacts.facebook)}
                 {Contact('Twitter', props.userInfo.contacts.twitter)}

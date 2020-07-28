@@ -13,12 +13,10 @@ const Sidebar = (props) => {
 
     let MenuItem = ({to, pageName, icon}) => {
         let [active, setActive] = useState(false)
-        let showLabel = () => setActive(true);
-        let hideLabel = () => setActive(false);
 
         return <div className={s.menuItem}>
             { active ? <span className={s.text}>{pageName}</span> : null}
-            <NavLink onMouseOver={showLabel} onMouseOut={hideLabel} className={s.icon} to={'/' + to} activeClassName={s.active}>
+            <NavLink onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)} className={s.icon} to={'/' + to} activeClassName={s.active}>
                 <img src={icon} alt=''/>
             </NavLink>
         </div>

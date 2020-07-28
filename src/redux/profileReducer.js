@@ -87,10 +87,13 @@ export const getUserStatus = (id) => (dispatch) => {
     if (id) {
         ProfileAPI.getUserStatus(id)
         .then(response => {
-            if (!response.resultCode) {
-                dispatch(setUserStatus(response))
+            if (response) {
+                if (!response.resultCode) {
+                    dispatch(setUserStatus(response))
+                }
+                else alert(response.messages[0])
             }
-            else alert(response.messages[0])
+            else setUserStatus('')
         })
     }
 
