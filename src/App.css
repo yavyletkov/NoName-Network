@@ -1,28 +1,27 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #ededed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: url("assets/images/bg.jpg") fixed;
+    background-size: 100%;
 }
 
 html {
-  overflow-y: scroll;
+    overflow-y: scroll;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 .App {
     display: grid;
     margin-top: 60px;
-    grid-template-areas:
-    "sidebar main"
-    "footer footer";
+    grid-template-areas: "sidebar main" "footer footer";
     grid-template-columns: 10% 90%;
     grid-template-rows: 1fr 40px;
     grid-column-gap: 30px;

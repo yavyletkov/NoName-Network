@@ -13,8 +13,8 @@ const Header = (props) => {
         <div className={s.loginBlock}>
             {props.authData.isAuth ?
                 <NavLink to='/settings'>
-                    <span className={s.login}>logged in </span>
-                    {props.authData.login?('as ' + props.authData.login):null}
+                    <span className={s.login}>logged in as </span>
+                    {props.authData.login?props.authData.login:null}
                 </NavLink> :
                 <NavLink to='/login'>login </NavLink>
             }
