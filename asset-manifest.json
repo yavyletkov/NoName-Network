@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/NoNameNetwork/static/css/main.b3812231.chunk.css",
+    "main.css": "/NoNameNetwork/static/css/main.6fedd15a.chunk.css",
     "main.js": "/NoNameNetwork/static/js/main.afb46240.chunk.js",
     "main.js.map": "/NoNameNetwork/static/js/main.afb46240.chunk.js.map",
     "runtime-main.js": "/NoNameNetwork/static/js/runtime-main.1058c190.js",
@@ -11,10 +11,10 @@
     "static/js/3.8a436c8d.chunk.js": "/NoNameNetwork/static/js/3.8a436c8d.chunk.js",
     "static/js/3.8a436c8d.chunk.js.map": "/NoNameNetwork/static/js/3.8a436c8d.chunk.js.map",
     "index.html": "/NoNameNetwork/index.html",
-    "precache-manifest.a45e9b890002e2cefa210517d9fe3c03.js": "/NoNameNetwork/precache-manifest.a45e9b890002e2cefa210517d9fe3c03.js",
+    "precache-manifest.d8445ddf9657c24b24b191e9d43902f9.js": "/NoNameNetwork/precache-manifest.d8445ddf9657c24b24b191e9d43902f9.js",
     "service-worker.js": "/NoNameNetwork/service-worker.js",
     "static/css/3.7def8457.chunk.css.map": "/NoNameNetwork/static/css/3.7def8457.chunk.css.map",
-    "static/css/main.b3812231.chunk.css.map": "/NoNameNetwork/static/css/main.b3812231.chunk.css.map",
+    "static/css/main.6fedd15a.chunk.css.map": "/NoNameNetwork/static/css/main.6fedd15a.chunk.css.map",
     "static/js/2.b57c5502.chunk.js.LICENSE.txt": "/NoNameNetwork/static/js/2.b57c5502.chunk.js.LICENSE.txt",
     "static/js/3.8a436c8d.chunk.js.LICENSE.txt": "/NoNameNetwork/static/js/3.8a436c8d.chunk.js.LICENSE.txt",
     "static/media/baseline_audiotrack_black_18dp.png": "/NoNameNetwork/static/media/baseline_audiotrack_black_18dp.6b11ce1c.png",
@@ -23,6 +23,7 @@
     "static/media/baseline_person_black_18dp.png": "/NoNameNetwork/static/media/baseline_person_black_18dp.bf3ef648.png",
     "static/media/baseline_settings_black_18dp.png": "/NoNameNetwork/static/media/baseline_settings_black_18dp.1309c908.png",
     "static/media/baseline_view_agenda_black_18dp.png": "/NoNameNetwork/static/media/baseline_view_agenda_black_18dp.596ed38b.png",
+    "static/media/App.css": "/NoNameNetwork/static/media/bg.4a7d9007.jpg",
     "static/media/default-user.jpg": "/NoNameNetwork/static/media/default-user.0f8e789e.jpg",
     "static/media/outline_favorite_black_18dp.png": "/NoNameNetwork/static/media/outline_favorite_black_18dp.bf5dfc3b.png",
     "static/media/preloader.svg": "/NoNameNetwork/static/media/preloader.3c6b6920.svg"
@@ -30,7 +31,7 @@
   "entrypoints": [
     "static/js/runtime-main.1058c190.js",
     "static/js/2.b57c5502.chunk.js",
-    "static/css/main.b3812231.chunk.css",
+    "static/css/main.6fedd15a.chunk.css",
     "static/js/main.afb46240.chunk.js"
   ]
 }
