@@ -8,9 +8,8 @@ let defaultState = {
             id: 2,
             text: 'Я тебе скажу, безделье - это игрушка дьявола, это во-первых. Во-вторых, занимайтесь спортом, не надо там по углам курить, шабить, дрочить, мастурбировать, что конечно многие одно и то же, есть жи, просто безделье - это игрушка дьявола, я повторяюсь ежи ну весь мир будет против меня я прав ежи я вдохновляюсь этим ежи а так пацаны голову не теряйте во первых и всех благ вам?'
         },
-        {id: 3, text: 'ебомоный обэма блядь'},
         {
-            id: 4,
+            id: 3,
             text: 'Я в своём познании настолько преисполнился, что как будто бы уже 100 триллионов миллиардов лет проживаю на триллионах и триллионах таких же планет, понимаешь?'
         },
     ],
@@ -37,10 +36,10 @@ let profileReducer = (state = defaultState, action) => {
                     postsData: [
                         ...state.postsData,
                         {
-                            id: state.postsData[state.postsData.length-1].id + 1,
+                            id: state.postsData[state.postsData.length - 1].id + 1,
                             text: action.postText
                         }
-                        ],
+                    ],
                 };
                 return stateCopy;
             } else return state;
@@ -86,15 +85,13 @@ export const getProfile = (id) => (dispatch) => {
 export const getUserStatus = (id) => (dispatch) => {
     if (id) {
         ProfileAPI.getUserStatus(id)
-        .then(response => {
-            if (response) {
-                if (!response.resultCode) {
-                    dispatch(setUserStatus(response))
-                }
-                else alert(response.messages[0])
-            }
-            else dispatch(setUserStatus(''))
-        })
+            .then(response => {
+                if (response) {
+                    if (!response.resultCode) {
+                        dispatch(setUserStatus(response))
+                    } else alert(response.messages[0])
+                } else dispatch(setUserStatus(''))
+            })
     }
 
 }
@@ -104,8 +101,7 @@ export const updateUserStatus = (userStatus) => (dispatch) => {
         .then(response => {
             if (!response.resultCode) {
                 dispatch(setUserStatus(userStatus))
-            }
-            else alert(response.messages[0])
+            } else alert(response.messages[0])
         })
 }
 
@@ -114,8 +110,7 @@ export const updateUserPhoto = (file) => (dispatch) => {
         .then(response => {
             if (!response.resultCode) {
                 dispatch(setNewUserPhotos(response.data.photos));
-            }
-            else alert(response.messages[0])
+            } else alert(response.messages[0])
         })
 }
 
@@ -124,8 +119,7 @@ export const updateUserInfo = (userInfo) => (dispatch) => {
         .then(response => {
             if (!response.resultCode) {
                 dispatch(setUserInfo(userInfo, true));
-            }
-            else {
+            } else {
                 let message = response.messages.length > 0 ? response.messages[0] : 'some error';
                 dispatch(stopSubmit('userInfo', {_error: message}));
                 alert(response.messages[0])
@@ -134,12 +128,24 @@ export const updateUserInfo = (userInfo) => (dispatch) => {
         })
 }
 
-export let setUserInfo = (userInfo, withoutPhotos) => {return {type: 'SET-USER-INFO', userInfo: userInfo, withoutPhotos: withoutPhotos}};
-export let addPost = (postText) => {return {type: 'ADD-POST', postText: postText}};
-export let toggleIsFetching = (status) => {return {type: 'TOGGLE-IS-FETCHING', status: status}};
-export let setUserStatus = (userStatus) => {return {type: 'SET-USER-STATUS', userStatus: userStatus}};
-export let setUserID = (userID) => {return {type: 'SET-USER-ID', userID: userID}};
-export let setNewUserPhotos = (photos) => {return {type: 'SET-NEW-USER-PHOTOS', photos}};
+export let setUserInfo = (userInfo, withoutPhotos) => {
+    return {type: 'SET-USER-INFO', userInfo: userInfo, withoutPhotos: withoutPhotos}
+};
+export let addPost = (postText) => {
+    return {type: 'ADD-POST', postText: postText}
+};
+export let toggleIsFetching = (status) => {
+    return {type: 'TOGGLE-IS-FETCHING', status: status}
+};
+export let setUserStatus = (userStatus) => {
+    return {type: 'SET-USER-STATUS', userStatus: userStatus}
+};
+export let setUserID = (userID) => {
+    return {type: 'SET-USER-ID', userID: userID}
+};
+export let setNewUserPhotos = (photos) => {
+    return {type: 'SET-NEW-USER-PHOTOS', photos}
+};
 
 export default profileReducer;
 
