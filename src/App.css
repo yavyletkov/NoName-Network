@@ -31,3 +31,17 @@ code {
     margin-right: 13%;
     color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+    .App {
+        margin-left: 2%;
+        margin-right: calc(2% + 10px);
+        grid-template-columns: 15% 85%;
+        grid-template-rows: 1fr 40px;
+        grid-column-gap: 10px;
+    }
+}
+
+.zindex0 {
+    z-index: 0;
+}

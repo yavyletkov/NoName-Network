@@ -27,7 +27,7 @@ const Pagination = ({totalItemsCount, pageSize, currentPage = 1, portionSize = 1
                         return page >= firstPageInPortion && page <= lastPageInPortion
                     })
                     .map(page => {
-                        let liClassName = classnames('page-item', {'active': +page === currentPage});
+                        let liClassName = classnames('page-item', 'git ', {'active zindex0': +page === currentPage});
                         return <li className={liClassName} key={page}>
                             <NavLink to={`/${urlPrefix}/${page}`} className='page-link' onClick={() => onPageChange(page)}>{page}</NavLink>
                         </li>

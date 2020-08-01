@@ -11,13 +11,14 @@
     color: #404040;
     font-size: 13px;
     z-index: 10;
+    min-width: 55px;
 }
 
 .sidebar a {
     display: block;
     text-decoration: none;
     color: inherit;
-    transition: all 200ms;
+    transition: all 1100ms;
 }
 
 .sidebar a:visited {
@@ -66,6 +67,12 @@
     position: absolute;
     right: 55px;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .text {
+        display: none;
+    }
 }
 
 

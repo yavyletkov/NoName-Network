@@ -19,8 +19,17 @@
     grid-gap: 15px;
 }
 
+@media screen and (max-width: 768px) {
+    .usersWrapper {
+        grid-template: repeat(auto-fit, 280px) / repeat(auto-fit, 130px);
+
+        grid-gap: 5px;
+    }
+}
+
 .userCard {
     min-width: 24%;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

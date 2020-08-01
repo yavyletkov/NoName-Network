@@ -1,7 +1,7 @@
 .userCard {
     position: relative;
     grid-area: userCard;
-    border-radius: 20px;
+    border-radius: 5px;
     background-color: #303030;
     padding-bottom: 15px;
     border: 1px solid #dfdfdf;
@@ -9,15 +9,16 @@
 }
 
 .userPhoto {
-    width: 220px;
+    /*width: 220px;*/
+    width: 100%;
     height: auto;
     margin-bottom: 10px;
 }
 
 .userPhoto img {
-    width: 218px;
-    height: 220px;
-    border-radius: 20px 20px 0 0;
+    /*width: 218px;*/
+    width: 100%;
+    border-radius: 5px 5px 0 0;
 }
 
 .fullName {
@@ -35,8 +36,8 @@
 
 .photoUpload {
     position: absolute;
-    top: 195px;
-    left: 10px;
+    top: 0;
+    left: 0;
 }
 
 .input {
@@ -51,10 +52,17 @@
 .label {
     cursor: pointer;
     background-color: rgba(48, 48, 48, 0.8);
-    padding: 5px 7px;
+    padding: 7px 9px;
     color: #cacaca;
     font-size: 12px;
     z-index: 10;
+    border-radius: 5px 0 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .label {
+        font-size: 17px;
+    }
 }
 
 .label:hover {

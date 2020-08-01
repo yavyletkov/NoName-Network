@@ -17,3 +17,12 @@
     text-align: left;
     margin-bottom: 20px;
 }
+
+@media screen and (max-width: 768px) {
+    .profile {
+        grid-template-areas:
+                "userCard"
+                "userInfo";
+        grid-template-columns: 1fr;
+    }
+}

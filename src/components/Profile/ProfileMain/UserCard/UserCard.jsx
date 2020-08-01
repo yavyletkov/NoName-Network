@@ -20,6 +20,13 @@ const UserCard = (props) => {
                 <img
                     src={userPhotoURL}
                     alt=''/>
+                <div className={s.photoUpload}>
+                    {props.id === props.authorizedUserID ?
+                        <label className={s.label}>CHANGE PHOTO
+                            <input name={'uploadPhoto'} className={s.input} onChange={onUserPhotoSelected} type="file"/>
+                        </label> :
+                        null}
+                </div>
             </div>
 
             <div className={s.fullName}>{props.userInfo.fullName}</div>
@@ -28,13 +35,7 @@ const UserCard = (props) => {
                     userStatus={props.userStatus} getUserStatus={props.getUserStatus}
                     updateUserStatus={props.updateUserStatus}/>
 
-            <div className={s.photoUpload}>
-                {props.id === props.authorizedUserID ?
-                    <label className={s.label}>CHANGE PHOTO
-                        <input name={'uploadPhoto'} className={s.input} onChange={onUserPhotoSelected} type="file"/>
-                    </label> :
-                    null}
-            </div>
+
 
         </div>
 }

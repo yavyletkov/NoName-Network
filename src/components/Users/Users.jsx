@@ -10,8 +10,8 @@ const Users = (props) => {
     return <div className={s.users}>
 
         <Pagination totalItemsCount={props.totalUsersCount}
-                   pageSize={props.pageSize} onPageChange={props.onPageChange}
-                   currentPage={props.currentPage} urlPrefix={'users'}/>
+                    pageSize={props.pageSize} onPageChange={props.onPageChange}
+                    currentPage={props.currentPage} urlPrefix={'users'}/>
 
         <div className={s.usersWrapper}>
 
@@ -48,6 +48,10 @@ const Users = (props) => {
                 </div>
             })}
         </div>
+
+        <Pagination totalItemsCount={props.totalUsersCount}
+                    pageSize={props.pageSize} onPageChange={props.onPageChange}
+                    currentPage={props.currentPage} urlPrefix={'users'}/>
     </div>
 }
 

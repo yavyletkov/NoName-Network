@@ -15,8 +15,9 @@ const Sidebar = (props) => {
         let [active, setActive] = useState(false)
 
         return <div className={s.menuItem}>
-            { active ? <span className={s.text}>{pageName}</span> : null}
-            <NavLink onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)} className={s.icon} to={'/' + to} activeClassName={s.active}>
+            {active ? <span className={s.text}>{pageName}</span> : null}
+            <NavLink onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)} className={s.icon}
+                     to={'/' + to} activeClassName={s.active}>
                 <img src={icon} alt=''/>
             </NavLink>
         </div>
@@ -41,7 +42,9 @@ const Sidebar = (props) => {
 
         </div>
 
-        <NavbarFriendList friendsData={props.state.friendsData}/>
+        {props.isAuth ? <NavbarFriendList friendsData={props.state.friendsData}/>
+            : null}
+
 
     </nav>
 }

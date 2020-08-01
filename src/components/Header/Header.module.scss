@@ -16,13 +16,24 @@ $gray: #404040;
     box-sizing: border-box;
     border-bottom: 1px solid #dfdfdf;
     z-index: 10;
+}
 
+@media screen and (max-width: 768px) {
+    .header {
+        padding-left: calc(3% + 15px);
+    }
 }
 
 .logo {
     font-family: 'Gochi Hand', cursive;
     font-size: 25px;
     transition: all 200ms,
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 17px;
+    }
 }
 
 .logo:hover {
